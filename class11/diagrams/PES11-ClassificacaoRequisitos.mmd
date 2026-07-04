@@ -1,0 +1,16 @@
+%% PES11 - Classificação de Requisitos (RF × RNF / FURPS+)
+%% Aula 11: Requisitos Funcionais e Não Funcionais
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    REQ["📋 Requisitos"] --> RF["⚙️ Funcionais (RF)\nO que o sistema faz"]
+    REQ --> RNF["🔧 Não Funcionais (RNF)\nComo o sistema é"]
+    RNF --> F["Usabilidade\n(F)"]
+    RNF --> U["Confiabilidade\n(U)"]
+    RNF --> R["Desempenho\n(R)"]
+    RNF --> P["Suportabilidade\n(P)"]
+    RNF --> PLUS["+ Design,\nImplementação,\nInterface, Físicos"]
+    style REQ fill:#2563EB,color:#FFF
+    style RF fill:#059669,color:#FFF
+    style RNF fill:#EA580C,color:#FFF

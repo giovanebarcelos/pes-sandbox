@@ -1,0 +1,24 @@
+%% PES20 - Padrão CQRS (Command Query Responsibility Segregation)
+%% Aula 20: DDD, Microserviços, Componentes e Interfaces
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    Client["👤 Cliente"] --> Router["🔀 Roteador CQRS"]
+    Router -->|"Commands (escrita)"| CmdBus["📤 Command Bus"]
+    Router -->|"Queries (leitura)"| QryBus["📥 Query Bus"]
+    CmdBus --> Handler["⚙️ Command Handler\n(valida + executa)"]
+    Handler --> Domain["🧠 Domain Model\n(regras de negócio)"]
+    Domain --> WriteDB[("🗄️ DB Escrita\n(normalizada)")]
+    WriteDB -.->|"sincronização\neventos"| ReadDB[("📋 DB Leitura\n(denormalizada)")]
+    QryBus --> Query["🔍 Query Handler\n(consulta otimizada)"]
+    Query --> ReadDB
+    style Client fill:#334155,color:#FFF
+    style Router fill:#D97706,color:#FFF
+    style CmdBus fill:#EA580C,color:#FFF
+    style QryBus fill:#2563EB,color:#FFF
+    style Handler fill:#EA580C,color:#FFF
+    style Domain fill:#EF4444,color:#FFF
+    style Query fill:#2563EB,color:#FFF
+    style WriteDB fill:#059669,color:#FFF
+    style ReadDB fill:#7C3AED,color:#FFF

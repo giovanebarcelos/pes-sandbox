@@ -1,0 +1,25 @@
+%% PES19 - Arquitetura Hexagonal (Ports & Adapters)
+%% Aula 19: Camadas, MVC, Clean Architecture e Hexagonal
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart LR
+    subgraph Primary["🔌 Primários (Driving)"]
+        P1["REST API"]
+        P2["CLI"]
+        P3["Testes"]
+    end
+    subgraph Core["🧠 Domínio (Core)"]
+        C1["Portas\n(Interfaces)"]
+        C2["Lógica de\nNegócio"]
+    end
+    subgraph Secondary["🔌 Secundários (Driven)"]
+        S1["MySQL"]
+        S2["MongoDB"]
+        S3["API Externa"]
+    end
+    Primary -->|"usa"| Core
+    Core -->|"implementa"| Secondary
+    style Primary fill:#2563EB,color:#FFF
+    style Core fill:#7C3AED,color:#FFF
+    style Secondary fill:#059669,color:#FFF

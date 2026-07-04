@@ -1,0 +1,22 @@
+%% PES24 - Git Flow
+%% Aula 24: Fluxos de Trabalho com Git e Colaboração
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    M["main (produção)"] --> D["develop"]
+    D --> F1["feature/login"]
+    D --> F2["feature/pagamento"]
+    F1 --> D
+    F2 --> D
+    D --> R["release/v1.0"]
+    R --> M
+    M --> HF["hotfix/bug-critico"]
+    HF --> M
+    HF --> D
+    style M fill:#059669,color:#FFF
+    style D fill:#2563EB,color:#FFF
+    style F1 fill:#EA580C,color:#FFF
+    style F2 fill:#EA580C,color:#FFF
+    style R fill:#7C3AED,color:#FFF
+    style HF fill:#EF4444,color:#FFF

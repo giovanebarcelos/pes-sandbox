@@ -1,0 +1,24 @@
+%% PES20 - DDD: Bounded Contexts (Contextos Delimitados)
+%% Aula 20: DDD, Microserviços, Componentes e Interfaces
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    subgraph Vendas["📦 Contexto: Vendas"]
+        V1["Pedido (Agregado)"]
+        V2["ItemPedido (Entidade)"]
+        V3["ClienteId (Value Object)"]
+    end
+    subgraph Estoque["📦 Contexto: Estoque"]
+        E1["Produto (Agregado)"]
+        E2["Quantidade (Value Object)"]
+    end
+    subgraph Pagamento["📦 Contexto: Pagamento"]
+        P1["Transacao (Agregado)"]
+        P2["StatusPagamento (Value Object)"]
+    end
+    Vendas -->|"eventos de domínio"| Estoque
+    Vendas -->|"eventos de domínio"| Pagamento
+    style Vendas fill:#2563EB,color:#FFF
+    style Estoque fill:#059669,color:#FFF
+    style Pagamento fill:#7C3AED,color:#FFF

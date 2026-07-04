@@ -1,0 +1,21 @@
+%% PES12 - Matriz de Rastreabilidade Requisitos × Casos de Uso
+%% Aula 12: Documentação e Validação de Requisitos
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart LR
+    RF1["RF01: Login"] --> UC1["UC01: Autenticar usuário"]
+    RF2["RF02: Buscar produtos"] --> UC2["UC02: Buscar produtos"]
+    RF3["RF03: Realizar pedido"] --> UC3["UC03: Criar pedido"]
+    RF3 --> UC4["UC04: Processar pagamento"]
+    RNF1["RNF01: Tempo < 2s"] --> UC1
+    RNF1 --> UC2
+    RNF1 --> UC3
+    style RF1 fill:#2563EB,color:#FFF
+    style RF2 fill:#2563EB,color:#FFF
+    style RF3 fill:#2563EB,color:#FFF
+    style RNF1 fill:#EA580C,color:#FFF
+    style UC1 fill:#059669,color:#FFF
+    style UC2 fill:#059669,color:#FFF
+    style UC3 fill:#059669,color:#FFF
+    style UC4 fill:#059669,color:#FFF

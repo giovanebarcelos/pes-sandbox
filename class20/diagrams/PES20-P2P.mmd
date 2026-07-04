@@ -1,0 +1,22 @@
+%% PES20 - Peer-to-Peer Architecture (Arquitetura Descentralizada)
+%% Aula 20: DDD, Microserviços, Componentes e Interfaces
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    N1["🖥️ Nó A\n(recurso + cliente)"] <-->|"conexão direta"| N2["🖥️ Nó B\n(recurso + cliente)"]
+    N2 <-->|"conexão direta"| N3["🖥️ Nó C\n(recurso + cliente)"]
+    N3 <-->|"conexão direta"| N4["🖥️ Nó D\n(recurso + cliente)"]
+    N4 <-->|"conexão direta"| N1
+    N1 <-->|"conexão direta"| N3
+    N2 <-->|"conexão direta"| N4
+    DS["🔍 Discovery Service\n(opcional, para bootstrap)"]
+    N1 -.->|"registra/descobre"| DS
+    N2 -.->|"registra/descobre"| DS
+    N3 -.->|"registra/descobre"| DS
+    N4 -.->|"registra/descobre"| DS
+    style N1 fill:#2563EB,color:#FFF
+    style N2 fill:#059669,color:#FFF
+    style N3 fill:#EA580C,color:#FFF
+    style N4 fill:#7C3AED,color:#FFF
+    style DS fill:#D97706,color:#FFF

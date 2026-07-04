@@ -1,0 +1,22 @@
+%% PES18 - Coesão e Acoplamento
+%% Aula 18: Princípios de Projeto e Padrões Arquiteturais
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart LR
+    subgraph AltaCoesao["✅ Alta Coesão"]
+        C1["Classe Pedido:\n• validar()\n• calcularTotal()\n• aplicarDesconto()"]
+    end
+    subgraph BaixaCoesao["❌ Baixa Coesão"]
+        C2["Classe God:\n• validarPedido()\n• enviarEmail()\n• gerarPDF()\n• logAuditoria()\n• calcularFrete()"]
+    end
+    subgraph BaixoAcopl["✅ Baixo Acoplamento"]
+        A1["PedidoService"] -->|interface| B1["EstoqueRepository"]
+    end
+    subgraph AltoAcopl["❌ Alto Acoplamento"]
+        A2["PedidoService"] -->|dependência direta| B2["MySQL conexão"]
+    end
+    style AltaCoesao fill:#059669,color:#FFF
+    style BaixaCoesao fill:#EF4444,color:#FFF
+    style BaixoAcopl fill:#059669,color:#FFF
+    style AltoAcopl fill:#EF4444,color:#FFF

@@ -1,0 +1,22 @@
+%% PES07 - Fluxo do Framework Scrum
+%% Aula 07: Metodologias Ágeis — Scrum e XP
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    A["📋 Product Backlog"] --> B["📌 Sprint Planning"]
+    B --> C["🗓️ Sprint Backlog"]
+    C --> D["🔄 Sprint (1-4 semanas)"]
+    D --> D1["Daily Scrum (15 min)"]
+    D1 --> D
+    D --> E["✅ Incremento Potencialmente Entregável"]
+    E --> F["📊 Sprint Review"]
+    F --> G["🔄 Sprint Retrospective"]
+    G --> B
+    style A fill:#2563EB,color:#FFF
+    style B fill:#EA580C,color:#FFF
+    style C fill:#7C3AED,color:#FFF
+    style D fill:#059669,color:#FFF
+    style E fill:#D97706,color:#FFF
+    style F fill:#2563EB,color:#FFF
+    style G fill:#7C3AED,color:#FFF

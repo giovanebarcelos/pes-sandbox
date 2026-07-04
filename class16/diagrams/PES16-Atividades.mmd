@@ -1,0 +1,26 @@
+%% PES16 - Diagrama de Atividades: Fluxo de Pedido
+%% Aula 16: Diagramas de Sequência e de Atividades
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    A["Início: Cliente seleciona produtos"] --> B{"Itens disponíveis?"}
+    B -->|Sim| C["Reservar itens no estoque"]
+    B -->|Não| D["Notificar indisponibilidade"]
+    D --> E["Fim: Pedido cancelado"]
+    C --> F{"Pagamento aprovado?"}
+    F -->|Sim| G["Confirmar pedido"]
+    F -->|Não| H["Liberar itens reservados"]
+    G --> I["Enviar confirmação por email"]
+    H --> E
+    I --> J["Fim: Pedido confirmado"]
+    style A fill:#2563EB,color:#FFF
+    style B fill:#D97706,color:#FFF
+    style C fill:#059669,color:#FFF
+    style D fill:#EF4444,color:#FFF
+    style E fill:#64748B,color:#FFF
+    style F fill:#D97706,color:#FFF
+    style G fill:#059669,color:#FFF
+    style H fill:#EF4444,color:#FFF
+    style I fill:#2563EB,color:#FFF
+    style J fill:#059669,color:#FFF

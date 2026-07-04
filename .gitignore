@@ -1,0 +1,14 @@
+# Web (renders HTML gerados)
+*.html
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Java
+*.class
+
+# OS
+.DS_Store
+Thumbs.db

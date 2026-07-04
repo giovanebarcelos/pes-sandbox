@@ -1,0 +1,34 @@
+%% PES17 - Diagrama de Classes: Locadora de Veículos
+%% Aula 17: Projeto Parcial — Modelagem UML + Implementação OO
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+classDiagram
+    class Veiculo {
+        <<abstract>>
+        -String placa
+        -String modelo
+        -double valorDiaria
+        +getPlaca() String
+        +getModelo() String
+        +getValorDiaria() double
+        +calcularLocacao(dias)* double
+    }
+    class Carro {
+        -int numPortas
+        +calcularLocacao(dias) double
+    }
+    class Moto {
+        -int cilindradas
+        +calcularLocacao(dias) double
+    }
+    class Locacao {
+        -Veiculo veiculo
+        -String cliente
+        -int dias
+        -double valorTotal
+        +getValorTotal() double
+    }
+    Veiculo <|-- Carro
+    Veiculo <|-- Moto
+    Locacao --> Veiculo

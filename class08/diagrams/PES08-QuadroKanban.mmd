@@ -1,0 +1,30 @@
+%% PES08 - Quadro Kanban com Limite de WIP
+%% Aula 08: Kanban e Comparação de Abordagens
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart LR
+    subgraph Backlog["📋 Backlog"]
+        B1["US-01"]
+        B2["US-02"]
+    end
+    subgraph ToDo["📌 To Do (WIP: ∞)"]
+        T1["US-03"]
+        T2["US-04"]
+    end
+    subgraph InProgress["🔄 In Progress (WIP: 3)"]
+        IP1["US-05"]
+        IP2["US-06"]
+    end
+    subgraph Review["👀 Review (WIP: 2)"]
+        R1["US-07"]
+    end
+    subgraph Done["✅ Done"]
+        D1["US-00"]
+    end
+    Backlog --> ToDo --> InProgress --> Review --> Done
+    style Backlog fill:#64748B,color:#FFF
+    style ToDo fill:#2563EB,color:#FFF
+    style InProgress fill:#D97706,color:#FFF
+    style Review fill:#7C3AED,color:#FFF
+    style Done fill:#059669,color:#FFF

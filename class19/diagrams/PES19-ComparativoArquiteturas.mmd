@@ -1,0 +1,38 @@
+%% PES19 - Mapa Comparativo de Arquiteturas de Software
+%% Aula 19: Camadas, MVC, Clean Architecture e Hexagonal
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+mindmap
+  root("🏗️ Arquiteturas de Software")
+    MVC["MVC\nModel-View-Controller"]
+      App["Aplicações Web tradicionais\nASP.NET, Spring MVC, Django"]
+      Fluxo["Controller → Model → View"]
+      Vantagem["Separação simples e clara"]
+    MVP["MVP\nModel-View-Presenter"]
+      App2["Interfaces ricas, WinForms\nAndroid (pré-ViewModel)"]
+      Fluxo2["View → Presenter → Model"]
+      Vantagem2["View passiva — fácil de testar"]
+    MVVM["MVVM\nModel-View-ViewModel"]
+      App3["WPF, Xamarin, SwiftUI\nAngular, Vue.js"]
+      Fluxo3["View ↔ ViewModel ↔ Model\n(data binding)"]
+      Vantagem3["Reatividade + desacoplamento total"]
+    Clean["Clean Architecture"]
+      App4["Sistemas enterprise\nMicrosserviços"]
+      Fluxo4["Dependência → dentro\n(regra da dependência)"]
+      Vantagem4["Domínio 100% isolado\nde frameworks"]
+    Hexagonal["Hexagonal (Ports & Adapters)"]
+      App5["Microsserviços, APIs\nSistemas testáveis"]
+      Fluxo5["Portas (interfaces) +\nAdaptadores (implementações)"]
+      Vantagem5["Troca de infraestrutura\nsem tocar no domínio"]
+    Onion["Onion Architecture"]
+      App6["Sistemas DDD\nAplicações corporativas"]
+      Fluxo6["Camadas concêntricas:\nDomain → App → Infra → Presentation"]
+      Vantagem6["Acoplamento zero\ncom camadas externas"]
+  style root fill:#2563EB,color:#FFF
+  style MVC fill:#059669,color:#FFF
+  style M_VP fill:#059669,color:#FFF
+  style MVVM fill:#EA580C,color:#FFF
+  style Clean fill:#7C3AED,color:#FFF
+  style Hexagonal fill:#D97706,color:#FFF
+  style Onion fill:#EF4444,color:#FFF

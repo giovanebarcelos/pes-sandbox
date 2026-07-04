@@ -1,0 +1,17 @@
+%% PES23 - Fluxo de Trabalho com Commits
+%% Aula 23: Gerência de Configuração e Introdução ao Git
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    A["git init / clone"] --> B["Editar arquivos"]
+    B --> C["git add"]
+    C --> D["git commit -m 'mensagem'"]
+    D --> E{"Mais mudanças?"}
+    E -->|Sim| B
+    E -->|Não| F["git push"]
+    F --> G["git log"]
+    G --> H["Colaborar: pull request"]
+    style A fill:#2563EB,color:#FFF
+    style D fill:#059669,color:#FFF
+    style F fill:#7C3AED,color:#FFF

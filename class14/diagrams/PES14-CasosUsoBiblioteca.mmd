@@ -1,0 +1,25 @@
+%% PES14 - Diagrama de Casos de Uso: Sistema de Biblioteca
+%% Aula 14: Diagrama de Casos de Uso
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    subgraph Sistema["📦 Sistema de Biblioteca"]
+        UC1["UC01: Pesquisar livros"]
+        UC2["UC02: Realizar empréstimo"]
+        UC3["UC03: Devolver livro"]
+        UC4["UC04: Cadastrar livro"]
+        UC5["UC05: Gerar relatório"]
+    end
+    ATOR1["👤 Leitor"] --> UC1
+    ATOR1 --> UC2
+    ATOR1 --> UC3
+    ATOR2["👤 Bibliotecário"] --> UC2
+    ATOR2 --> UC3
+    ATOR2 --> UC4
+    ATOR2 --> UC5
+    UC2 -.->|«include»| UC1
+    UC3 -.->|«include»| UC2
+    style Sistema fill:#F0F4F8,stroke:#2563EB
+    style ATOR1 fill:#059669,color:#FFF
+    style ATOR2 fill:#7C3AED,color:#FFF

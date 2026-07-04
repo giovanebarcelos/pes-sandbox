@@ -1,0 +1,14 @@
+%% PES07 - Ciclo da Sprint
+%% Aula 07: Metodologias Ágeis — Scrum e XP
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart LR
+    subgraph Sprint["🗓️ Sprint (2 semanas)"]
+        direction TB
+        D1["Dia 1: Planning"] --> D2["Dias 2-9: Desenvolvimento"]
+        D2 --> D3["Daily Scrum (todos os dias)"]
+        D3 --> D2
+        D2 --> D4["Dia 10: Review + Retro"]
+    end
+    style Sprint fill:#059669,color:#FFF

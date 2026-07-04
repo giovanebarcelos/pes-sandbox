@@ -1,0 +1,20 @@
+%% PES20 - Arquitetura de Microserviços
+%% Aula 20: DDD, Microserviços, Componentes e Interfaces
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    GW["🌐 API Gateway"] --> MS1["📦 Serviço de Vendas"]
+    GW --> MS2["📦 Serviço de Estoque"]
+    GW --> MS3["📦 Serviço de Pagamento"]
+    GW --> MS4["📦 Serviço de Notificação"]
+    MS1 --> DB1[("🗄️ DB Vendas")]
+    MS2 --> DB2[("🗄️ DB Estoque")]
+    MS3 --> DB3[("🗄️ DB Pagamento")]
+    MS1 -.->|"mensageria"| MS4
+    MS3 -.->|"mensageria"| MS4
+    style GW fill:#EA580C,color:#FFF
+    style MS1 fill:#2563EB,color:#FFF
+    style MS2 fill:#059669,color:#FFF
+    style MS3 fill:#7C3AED,color:#FFF
+    style MS4 fill:#D97706,color:#FFF

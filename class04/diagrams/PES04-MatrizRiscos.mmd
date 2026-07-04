@@ -1,0 +1,20 @@
+%% PES04 - Matriz de Riscos (Probabilidade × Impacto)
+%% Aula 04: Acompanhamento, Riscos e Ferramentas de Gestão
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    subgraph AltaProb["🔴 Alta Probabilidade"]
+        A1["Atraso em dependência externa (P=0.7, I=Alto)"] --> R1["Mitigar: contrato com SLA"]
+        A2["Saída de desenvolvedor chave (P=0.5, I=Alto)"] --> R2["Mitigar: documentação + pair programming"]
+    end
+    subgraph MediaProb["🟡 Média Probabilidade"]
+        B1["Mudança de requisitos tardia (P=0.4, I=Médio)"] --> R3["Aceitar: reserva de contingência"]
+        B2["Falha de integração (P=0.3, I=Alto)"] --> R4["Mitigar: CI/CD + testes automatizados"]
+    end
+    subgraph BaixaProb["🟢 Baixa Probabilidade"]
+        C1["Indisponibilidade de servidor (P=0.1, I=Baixo)"] --> R5["Aceitar: monitoramento"]
+    end
+    style AltaProb fill:#EF4444,color:#FFF
+    style MediaProb fill:#D97706,color:#FFF
+    style BaixaProb fill:#059669,color:#FFF

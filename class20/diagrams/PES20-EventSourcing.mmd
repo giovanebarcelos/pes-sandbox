@@ -1,0 +1,23 @@
+%% PES20 - Padrão Event Sourcing
+%% Aula 20: DDD, Microserviços, Componentes e Interfaces
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    User["👤 Usuário"] --> App["📱 Aplicação"]
+    App -->|"comando"| ES["📝 Event Store\n(log imutável)"]
+    ES -->|"eventos passados"| App
+    ES -->|"reproduz eventos"| PJ["📊 Projections\n(estado atual derivado)"]
+    PJ -->|"consulta rápida"| App
+    subgraph EventLog["📜 Event Log"]
+        E1["💰 ContaCriada(1001, 0)"]
+        E2["💵 DepositoRealizado(1001, 500)"]
+        E3["💸 SaqueRealizado(1001, 100)"]
+        E4["💰 DepositoRealizado(1001, 200)"]
+    end
+    ES --- EventLog
+    style User fill:#334155,color:#FFF
+    style App fill:#2563EB,color:#FFF
+    style ES fill:#EA580C,color:#FFF
+    style PJ fill:#059669,color:#FFF
+    style EventLog fill:#7C3AED,color:#FFF

@@ -1,0 +1,15 @@
+%% PES25 - Diagrama C4: Contexto do Sistema
+%% Aula 25: Documentação Técnica e Projeto Integrador Final
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    User["👤 Usuário\n(Cliente da Locadora)"] --> Sistema["📦 Sistema Locadora\n(Software a ser construído)"]
+    Admin["👤 Administrador\n(Funcionário)"] --> Sistema
+    Sistema --> Email["📧 Serviço de Email\n(Sistema externo)"]
+    Sistema --> Pagamento["💳 Gateway de Pagamento\n(Sistema externo)"]
+    style User fill:#059669,color:#FFF
+    style Admin fill:#7C3AED,color:#FFF
+    style Sistema fill:#2563EB,color:#FFF
+    style Email fill:#D97706,color:#FFF
+    style Pagamento fill:#EA580C,color:#FFF

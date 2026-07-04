@@ -1,0 +1,23 @@
+%% PES19 - Arquitetura em Camadas
+%% Aula 19: Camadas, MVC, Clean Architecture e Hexagonal
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+flowchart TD
+    subgraph Presentation["🎨 Apresentação (UI)"]
+        P1["Controllers / Views"]
+    end
+    subgraph Application["⚙️ Aplicação (Business)"]
+        A1["Services / DTOs"]
+    end
+    subgraph Domain["🧠 Domínio"]
+        D1["Entidades / Regras"]
+    end
+    subgraph Infrastructure["💾 Infraestrutura"]
+        I1["Repository / DB / APIs"]
+    end
+    Presentation --> Application --> Domain --> Infrastructure
+    style Presentation fill:#2563EB,color:#FFF
+    style Application fill:#EA580C,color:#FFF
+    style Domain fill:#7C3AED,color:#FFF
+    style Infrastructure fill:#059669,color:#FFF
