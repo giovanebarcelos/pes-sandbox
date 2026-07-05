@@ -1,13 +1,13 @@
 /*
- * PES2501 - Geração de Documentação (Javadoc)
- * Aula 25: Documentação Técnica e Projeto Integrador Final
+ * PES2701 - Geração de Documentação (Javadoc)
+ * Aula 27: Documentação Técnica e Projeto Integrador Final
  * Projeto e Engenharia de Software - Prof. Giovane Barcelos
  *
  * Demonstra documentação inline com Javadoc e boas práticas
  * de documentação de código.
  *
  * Compilar/executar:
- *   javac PES2501-Documentacao.java && java Documentacao
+ *   javac PES2701-Documentacao.java && java Documentacao
  */
 
 /**

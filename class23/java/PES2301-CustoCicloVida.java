@@ -1,10 +1,10 @@
 /*
- * PES2101 - Cálculo de Custo Acumulado por Fase do SDLC
- * Aula 21: Ciclo de Vida de Software
+ * PES2301 - Cálculo de Custo Acumulado por Fase do SDLC
+ * Aula 23: Ciclo de Vida de Software
  * Projeto e Engenharia de Software - Prof. Giovane Barcelos
  *
  * Compilar/executar:
- *   javac PES2101-CustoCicloVida.java && java CustoCicloVida
+ *   javac PES2301-CustoCicloVida.java && java CustoCicloVida
  */
 
 class CustoCicloVida {

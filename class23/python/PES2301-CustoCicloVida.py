@@ -1,6 +1,6 @@
 """
-PES2101 - Cálculo de Custo Acumulado por Fase do SDLC
-Aula 21: Ciclo de Vida de Software
+PES2301 - Cálculo de Custo Acumulado por Fase do SDLC
+Aula 23: Ciclo de Vida de Software
 Projeto e Engenharia de Software - Prof. Giovane Barcelos
 
 Simula o custo acumulado ao longo das fases do ciclo de vida,

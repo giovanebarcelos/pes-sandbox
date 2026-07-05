@@ -1,6 +1,6 @@
 """
-PES2301 - Roteiro de Comandos Git Comentado
-Aula 23: Gerência de Configuração e Introdução ao Git
+PES2501 - Roteiro de Comandos Git Comentado
+Aula 25: Gerência de Configuração e Introdução ao Git
 Projeto e Engenharia de Software - Prof. Giovane Barcelos
 
 Exibe um roteiro comentado dos principais comandos Git,

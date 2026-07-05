@@ -1,10 +1,10 @@
 /*
- * PES2201 - Antes/Depois de Refatoração
- * Aula 22: Tipos de Manutenção e Evolução de Software
+ * PES2401 - Antes/Depois de Refatoração
+ * Aula 24: Tipos de Manutenção e Evolução de Software
  * Projeto e Engenharia de Software - Prof. Giovane Barcelos
  *
  * Compilar/executar:
- *   javac PES2201-Refatoracao.java && java Refatoracao
+ *   javac PES2401-Refatoracao.java && java Refatoracao
  */
 
 import java.util.*;

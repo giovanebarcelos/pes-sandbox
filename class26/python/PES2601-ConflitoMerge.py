@@ -1,6 +1,6 @@
 """
-PES2401 - Simulação de Conflito de Merge e Resolução
-Aula 24: Fluxos de Trabalho com Git e Colaboração
+PES2601 - Simulação de Conflito de Merge e Resolução
+Aula 26: Fluxos de Trabalho com Git e Colaboração
 Projeto e Engenharia de Software - Prof. Giovane Barcelos
 
 Simula um cenário de conflito de merge quando duas branches

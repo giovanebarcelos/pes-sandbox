@@ -1,8 +1,8 @@
 # Repository — Projeto e Engenharia de Software
 
-**Repositório de exemplos reais do curso** | **26 aulas** | **Prof. Giovane Barcelos**
+**Repositório de exemplos reais do curso** | **28 aulas** | **Prof. Giovane Barcelos**
 
-Este repositório contém os artefatos práticos de todas as 26 aulas da disciplina Projeto e Engenharia de Software (PES). Cada `classXX/` contém diagramas Mermaid (`.mmd`), código Python e código Java, garantindo que **nenhuma aula fique sem exemplo real executável**.
+Este repositório contém os artefatos práticos de todas as 28 aulas da disciplina Projeto e Engenharia de Software (PES). Cada `classXX/` contém diagramas Mermaid (`.mmd`), código Python e código Java, garantindo que **nenhuma aula fique sem exemplo real executável**.
 
 ---
 
@@ -10,7 +10,7 @@ Este repositório contém os artefatos práticos de todas as 26 aulas da discipl
 
 ```
 repository/
-  class01/{python,java,diagrams}/  ... class26/
+  class01/{python,java,diagrams}/  ... class28/
 ```
 
 Cada diretório `classXX/` contém:
@@ -51,12 +51,12 @@ Cada diretório `classXX/` contém:
 | 18 | UA5 | Princípios SOLID | PES18-CoesaoAcoplamento.mmd | PES1801-SOLID.py | PES1801-SOLID.java |
 | 19 | UA5 | Camadas, MVC, Clean, Hexagonal | PES19-Camadas.mmd, PES19-MVC.mmd, PES19-CleanArch.mmd, PES19-Hexagonal.mmd | PES1901-MVC.py, PES1903-Hexagonal-Ports.py | PES1901-MVC.java, PES1903-HexagonalPorts.java |
 | 20 | UA5 | DDD e Microserviços | PES20-DDD-Contextos.mmd, PES20-Microservicos.mmd | PES2001-DDD-Dominio.py | PES2001-DDD-Dominio.java |
-| 21 | UA6 | Ciclo de Vida (SDLC) | PES21-SDLC.mmd | PES2101-CustoCicloVida.py | PES2101-CustoCicloVida.java |
-| 22 | UA6 | Manutenção e Evolução | PES22-TiposManutencao.mmd | PES2201-Refatoracao.py | PES2201-Refatoracao.java |
-| 23 | UA7 | Git — Fundamentos | PES23-EstadosGit.mmd, PES23-FluxoCommit.mmd | PES2301-ComandosGit.py | PES2301-ComandosGit.java |
-| 24 | UA7 | Git — Branches e Colaboração | PES24-Branches.mmd, PES24-GitFlow.mmd | PES2401-ConflitoMerge.py | PES2401-ConflitoMerge.java |
-| 25 | UA8 | Documentação Técnica | PES25-C4-Contexto.mmd, PES25-TemplateREADME.md | PES2501-Documentacao.py | PES2501-Documentacao.java |
-| 26 | UA8 | Práticas Colaborativas e Ética | PES26-MapaMentalCurso.mmd | PES2601-CodeReviewChecklist.py | PES2601-CodeReviewChecklist.java |
+| 23 | UA6 | Ciclo de Vida (SDLC) | PES23-SDLC.mmd | PES2301-CustoCicloVida.py | PES2301-CustoCicloVida.java |
+| 24 | UA6 | Manutenção e Evolução | PES24-TiposManutencao.mmd | PES2401-Refatoracao.py | PES2401-Refatoracao.java |
+| 25 | UA7 | Git — Fundamentos | PES25-EstadosGit.mmd, PES25-FluxoCommit.mmd | PES2501-ComandosGit.py | PES2501-ComandosGit.java |
+| 26 | UA7 | Git — Branches e Colaboração | PES26-Branches.mmd, PES26-GitFlow.mmd | PES2601-ConflitoMerge.py | PES2601-ConflitoMerge.java |
+| 27 | UA8 | Documentação Técnica | PES27-C4-Contexto.mmd, PES27-TemplateREADME.md | PES2701-Documentacao.py | PES2701-Documentacao.java |
+| 28 | UA8 | Práticas Colaborativas e Ética | PES28-MapaMentalCurso.mmd | PES2801-CodeReviewChecklist.py | PES2801-CodeReviewChecklist.java |
 
 ## Como Executar
 
@@ -81,7 +81,7 @@ javac PESXXYY-NomeDoArquivo.java && java NomeDaClasse
 ## Nomenclatura
 
 - **PES** = Projeto e Engenharia de Software (prefixo do curso)
-- **XX** = Número da aula (01-26)
+- **XX** = Número da aula (01-28)
 - **YY** = Sequencial do artefato (01-99)
 - `.mmd` = Diagrama Mermaid (UML, fluxo, arquitetura)
 

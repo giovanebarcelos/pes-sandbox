@@ -1,10 +1,10 @@
 /*
- * PES2601 - Checklist de Code Review e Boas Práticas Colaborativas
- * Aula 26: Práticas Colaborativas, Ética e Encerramento
+ * PES2801 - Checklist de Code Review e Boas Práticas Colaborativas
+ * Aula 28: Práticas Colaborativas, Ética e Encerramento
  * Projeto e Engenharia de Software - Prof. Giovane Barcelos
  *
  * Compilar/executar:
- *   javac PES2601-CodeReviewChecklist.java && java CodeReviewChecklist
+ *   javac PES2801-CodeReviewChecklist.java && java CodeReviewChecklist
  */
 
 class CodeReviewChecklist {

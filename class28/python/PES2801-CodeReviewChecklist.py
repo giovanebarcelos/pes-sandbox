@@ -1,6 +1,6 @@
 """
-PES2601 - Checklist de Code Review e Boas Práticas Colaborativas
-Aula 26: Práticas Colaborativas, Ética e Encerramento
+PES2801 - Checklist de Code Review e Boas Práticas Colaborativas
+Aula 28: Práticas Colaborativas, Ética e Encerramento
 Projeto e Engenharia de Software - Prof. Giovane Barcelos
 
 Implementa um checklist interativo de code review,

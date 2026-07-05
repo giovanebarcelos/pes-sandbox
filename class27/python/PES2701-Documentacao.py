@@ -1,6 +1,6 @@
 """
-PES2501 - Geração Automática de Documentação (Docstrings)
-Aula 25: Documentação Técnica e Projeto Integrador Final
+PES2701 - Geração Automática de Documentação (Docstrings)
+Aula 27: Documentação Técnica e Projeto Integrador Final
 Projeto e Engenharia de Software - Prof. Giovane Barcelos
 
 Demonstra documentação inline com docstrings formatadas e

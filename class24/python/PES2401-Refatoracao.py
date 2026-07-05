@@ -1,6 +1,6 @@
 """
-PES2201 - Antes/Depois de Refatoração
-Aula 22: Tipos de Manutenção e Evolução de Software
+PES2401 - Antes/Depois de Refatoração
+Aula 24: Tipos de Manutenção e Evolução de Software
 Projeto e Engenharia de Software - Prof. Giovane Barcelos
 
 Demonstra refatoração: código com débito técnico (antes)
