@@ -1,13 +1,14 @@
 /*
- * PES2001 - DDD: Entidade, Objeto de Valor e Agregado
- * Aula 20: DDD, Microserviços, Componentes e Interfaces
+ * PES2101 - DDD: Entidade, Objeto de Valor, Agregado e Serviço de Domínio
+ * Aula 21: DDD, CQRS e Event Sourcing
  * Projeto e Engenharia de Software - Prof. Giovane Barcelos
  *
- * Demonstra os blocos táticos do DDD: Entity, Value Object, Aggregate.
- * Domínio: Pedido (agregado) com itens (entidades) e preço (value object).
+ * Demonstra os blocos táticos do DDD: Entity, Value Object, Aggregate
+ * e Domain Service. Domínio: Pedido (agregado) com itens (entidades),
+ * preço (value object) e cálculo de frete (serviço de domínio).
  *
  * Compilar/executar:
- *   javac PES2001-DDD-Dominio.java && java DDDDominio
+ *   javac PES2101-DDD-Dominio.java && java DDDDominio
  */
 
 import java.util.*;
@@ -90,6 +91,14 @@ class Pedido {
     }
 }
 
+// ===== Domain Service (lógica que não pertence a uma única entidade) =====
+class CalculadoraFrete {
+    Dinheiro calcular(Pedido pedido, String cepDestino) {
+        double base = cepDestino.startsWith("8") ? 15.0 : 25.0;
+        return new Dinheiro(base);
+    }
+}
+
 class DDDDominio {
     public static void main(String[] args) {
         System.out.println("=".repeat(60));
@@ -110,8 +119,15 @@ class DDDDominio {
         pedido.fechar();
         System.out.printf("%n  Status após fechar: %s%n", pedido.getStatus());
 
+        CalculadoraFrete calculadoraFrete = new CalculadoraFrete();
+        Dinheiro freteSP = calculadoraFrete.calcular(pedido, "01310-000");
+        Dinheiro freteDF = calculadoraFrete.calcular(pedido, "80010-000");
+        System.out.printf("%n  Frete para CEP 01310-000 (não inicia com 8): %s%n", freteSP);
+        System.out.printf("  Frete para CEP 80010-000 (inicia com 8): %s%n", freteDF);
+
         System.out.println("\n✓ Entity: tem identidade (produtoId, pedidoId).");
         System.out.println("✓ Value Object: imutável, comparado por valor (Dinheiro).");
         System.out.println("✓ Aggregate: Pedido garante consistência dos itens.");
+        System.out.println("✓ Domain Service: CalculadoraFrete não pertence a uma única entidade.");
     }
 }

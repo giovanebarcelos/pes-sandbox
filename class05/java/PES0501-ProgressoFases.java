@@ -26,10 +26,11 @@ class ProgressoFases {
 
     static final Fase[] FASES_CASCATA = {
         new Fase("Requisitos", 0.15, "Documento de requisitos aprovado"),
-        new Fase("Projeto (Design)", 0.20, "Arquitetura e design detalhado"),
-        new Fase("Implementação", 0.35, "Código fonte completo"),
+        new Fase("Projeto (Design)", 0.15, "Arquitetura e design detalhado"),
+        new Fase("Implementação", 0.30, "Código fonte completo"),
         new Fase("Testes", 0.20, "Relatório de testes e bugs corrigidos"),
-        new Fase("Manutenção", 0.10, "Sistema em produção"),
+        new Fase("Implantação", 0.10, "Sistema em produção"),
+        new Fase("Manutenção", 0.10, "Correções e evolução contínua"),
     };
 
     public static void simularProgresso(double esforcoTotalHoras) {

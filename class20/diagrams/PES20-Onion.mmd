@@ -1,5 +1,5 @@
-%% PES19 - Onion Architecture (Camadas Concêntricas)
-%% Aula 19: Camadas, MVC, Clean Architecture e Hexagonal
+%% PES20 - Onion Architecture (Camadas Concêntricas)
+%% Aula 20: Clean Architecture, Hexagonal e Onion
 %% Projeto e Engenharia de Software - Prof. Giovane Barcelos
 %% Mermaid compatível com PlantUML (https://plantuml.com/):
 %% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
@@ -17,8 +17,8 @@ flowchart TD
         P["Controllers\nViews / APIs\nCLI / Web"]
     end
     Pres --> App --> Core
-    Pres --> Infra
-    App --> Infra
+    Infra --> Core
+    Pres -.->|"resolvida via DI\n(não é dependência de compilação)"| Infra
     style Core fill:#EF4444,color:#FFF
     style App fill:#D97706,color:#FFF
     style Infra fill:#2563EB,color:#FFF

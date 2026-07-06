@@ -1,6 +1,6 @@
 /*
  * PES1901 - Padrão MVC (Model-View-Controller)
- * Aula 19: Camadas, MVC, Clean Architecture e Hexagonal
+ * Aula 19: MVC, MVP e MVVM
  * Projeto e Engenharia de Software - Prof. Giovane Barcelos
  *
  * Implementa o padrão MVC com uma lista de tarefas.

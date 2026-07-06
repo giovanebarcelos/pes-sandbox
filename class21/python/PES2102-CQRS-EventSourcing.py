@@ -1,6 +1,6 @@
 """
-PES2002 - CQRS + Event Sourcing: Conta Bancária
-Aula 20: DDD, Microserviços, Componentes e Interfaces
+PES2102 - CQRS + Event Sourcing: Conta Bancária
+Aula 21: DDD, CQRS e Event Sourcing
 Projeto e Engenharia de Software - Prof. Giovane Barcelos
 
 Demonstra CQRS (Command Query Responsibility Segregation) combinado

@@ -53,6 +53,16 @@ class CaminhoCritico {
     }
 
     public static ResultadoCPM calcularCaminhoCritico(List<Atividade> atividades) {
+        Map<String, Atividade> porNome = new LinkedHashMap<>();
+        for (Atividade a : atividades) porNome.put(a.nome, a);
+
+        Map<String, List<String>> sucessoras = new LinkedHashMap<>();
+        for (Atividade a : atividades) sucessoras.put(a.nome, new ArrayList<>());
+        for (Atividade a : atividades) {
+            for (String dep : a.dependencias) sucessoras.get(dep).add(a.nome);
+        }
+
+        // Forward pass: início e fim mais cedo
         Map<String, Atividade> resolvidas = new LinkedHashMap<>();
         List<Atividade> pendentes = new ArrayList<>(atividades);
 
@@ -80,10 +90,37 @@ class CaminhoCritico {
         int duracaoTotal = atividades.stream().mapToInt(a -> a.fimCedo).max().orElse(0);
         double custoTotal = atividades.stream().mapToDouble(Atividade::getCustoTotal).sum();
 
+        // Backward pass: fim mais tarde, propagado a partir das atividades sem sucessoras
+        Map<String, Integer> fimTarde = new LinkedHashMap<>();
+        pendentes = new ArrayList<>(atividades);
+
+        while (!pendentes.isEmpty()) {
+            boolean progresso = false;
+            for (Iterator<Atividade> it = pendentes.iterator(); it.hasNext(); ) {
+                Atividade atv = it.next();
+                List<String> subsequentes = sucessoras.get(atv.nome);
+                boolean subsequentesResolvidas = subsequentes.stream().allMatch(fimTarde::containsKey);
+                if (subsequentesResolvidas) {
+                    if (subsequentes.isEmpty()) {
+                        fimTarde.put(atv.nome, duracaoTotal);
+                    } else {
+                        int minimo = subsequentes.stream()
+                                .mapToInt(s -> fimTarde.get(s) - porNome.get(s).duracao)
+                                .min().orElse(duracaoTotal);
+                        fimTarde.put(atv.nome, minimo);
+                    }
+                    it.remove();
+                    progresso = true;
+                    break;
+                }
+            }
+            if (!progresso) throw new IllegalStateException("Dependência circular ou não resolvida.");
+        }
+
+        // Caminho crítico: toda atividade com folga zero (não só as predecessoras diretas da última)
         List<Atividade> criticas = new ArrayList<>();
         for (Atividade a : atividades) {
-            if (a.fimCedo == duracaoTotal ||
-                atividades.stream().anyMatch(dep -> dep.dependencias.contains(a.nome) && dep.fimCedo == duracaoTotal)) {
+            if (fimTarde.get(a.nome) == a.fimCedo) {
                 criticas.add(a);
             }
         }

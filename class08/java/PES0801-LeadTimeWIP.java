@@ -43,9 +43,12 @@ class LeadTimeWIP {
         return new double[]{avgLead, avgCycle};
     }
 
-    public static void simularWIP(int limiteWIP, int totalTarefas, double tempoMedio) {
-        double throughputMax = limiteWIP / tempoMedio;
-        double leadTimeEst = throughputMax > 0 ? totalTarefas / throughputMax : Double.POSITIVE_INFINITY;
+    public static void simularWIP(int limiteWIP, int totalTarefas, double tempoMedio, int capacidadeEquipe) {
+        // Lei de Little: Lead Time = WIP / Throughput. O throughput é limitado pela
+        // capacidade da equipe — WIP acima dela só represa tarefas, não acelera a entrega.
+        int wipProcessavel = Math.min(limiteWIP, capacidadeEquipe);
+        double throughputMax = wipProcessavel / tempoMedio;
+        double leadTimeEst = throughputMax > 0 ? limiteWIP / throughputMax : Double.POSITIVE_INFINITY;
         System.out.printf("  WIP=%2d: Throughput máx=%.2f tar/dia, Lead Time est.=%.1f dias%n",
                 limiteWIP, throughputMax, leadTimeEst);
     }
@@ -66,11 +69,14 @@ class LeadTimeWIP {
         System.out.printf("%n--- Métricas de Fluxo ---%n");
         double[] medias = calcularMetricas(tarefas);
 
-        System.out.printf("%n--- Simulação de Limite de WIP ---%n");
+        int capacidadeEquipe = 3; // nº de tarefas que a equipe processa em paralelo
+        System.out.printf("%n--- Simulação de Limite de WIP (capacidade da equipe: %d) ---%n", capacidadeEquipe);
         for (int wip : new int[]{2, 3, 5, 10}) {
-            simularWIP(wip, 20, medias[1]);
+            simularWIP(wip, 20, medias[1], capacidadeEquipe);
         }
 
-        System.out.printf("%n✓ Conclusão: Reduzir WIP reduz lead time e expõe gargalos.%n");
+        System.out.printf("%n✓ Conclusão: WIP acima da capacidade da equipe não aumenta o throughput,%n"
+                + "  apenas represa tarefas e aumenta o lead time — por isso reduzir o WIP%n"
+                + "  (até o limite da capacidade) reduz o lead time e expõe gargalos.%n");
     }
 }

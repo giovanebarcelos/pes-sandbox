@@ -49,8 +49,10 @@ Cada diretório `classXX/` contém:
 | 16 | UA4 | Sequência e Atividades | PES16-Sequencia.mmd, PES16-Atividades.mmd | PES1601-FluxoPedido.py | PES1601-FluxoPedido.java |
 | 17 | UA4 | Projeto Parcial Locadora | PES17-CasosUsoLocadora.mmd, PES17-ClassesLocadora.mmd | PES1701-Locadora.py | PES1701-Locadora.java |
 | 18 | UA5 | Princípios SOLID | PES18-CoesaoAcoplamento.mmd | PES1801-SOLID.py | PES1801-SOLID.java |
-| 19 | UA5 | Camadas, MVC, Clean, Hexagonal | PES19-Camadas.mmd, PES19-MVC.mmd, PES19-CleanArch.mmd, PES19-Hexagonal.mmd | PES1901-MVC.py, PES1903-Hexagonal-Ports.py | PES1901-MVC.java, PES1903-HexagonalPorts.java |
-| 20 | UA5 | DDD e Microserviços | PES20-DDD-Contextos.mmd, PES20-Microservicos.mmd | PES2001-DDD-Dominio.py | PES2001-DDD-Dominio.java |
+| 19 | UA5 | MVC, MVP, MVVM | PES19-Camadas.mmd, PES19-MVC.mmd, PES19-MVP.mmd, PES19-MVVM.mmd | PES1901-MVC.py, PES1902-MVP.py, PES1903-MVVM.py | PES1901-MVC.java, PES1902-MVP.java, PES1903-MVVM.java |
+| 20 | UA5 | Clean Architecture, Hexagonal, Onion | PES20-CleanArch.mmd, PES20-Hexagonal.mmd, PES20-Onion.mmd, PES20-ComparativoArquiteturas.mmd | PES2001-Hexagonal.py, PES2002-Onion.py | PES2001-Hexagonal.java, PES2002-Onion.java |
+| 21 | UA5 | DDD, CQRS, Event Sourcing | PES21-DDD-Contextos.mmd, PES21-CQRS.mmd, PES21-EventSourcing.mmd | PES2101-DDD-Dominio.py, PES2102-CQRS-EventSourcing.py | PES2101-DDD-Dominio.java, PES2102-CQRSEventSourcing.java |
+| 22 | UA5 | Microsserviços e Arquiteturas Distribuídas | PES22-Microservicos.mmd, PES22-ModularMonolith.mmd, PES22-Microkernel.mmd, PES22-P2P.mmd | PES2201-Microservicos.py, PES2202-Microkernel.py, PES2203-ComunicacaoServicos.py | PES2201-Microservicos.java, PES2202-Microkernel.java, PES2203-ComunicacaoServicos.java |
 | 23 | UA6 | Ciclo de Vida (SDLC) | PES23-SDLC.mmd | PES2301-CustoCicloVida.py | PES2301-CustoCicloVida.java |
 | 24 | UA6 | Manutenção e Evolução | PES24-TiposManutencao.mmd | PES2401-Refatoracao.py | PES2401-Refatoracao.java |
 | 25 | UA7 | Git — Fundamentos | PES25-EstadosGit.mmd, PES25-FluxoCommit.mmd | PES2501-ComandosGit.py | PES2501-ComandosGit.java |

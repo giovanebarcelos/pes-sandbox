@@ -1,10 +1,11 @@
 """
-PES2001 - DDD: Entidade, Objeto de Valor e Agregado
-Aula 20: DDD, Microserviços, Componentes e Interfaces
+PES2101 - DDD: Entidade, Objeto de Valor, Agregado e Serviço de Domínio
+Aula 21: DDD, CQRS e Event Sourcing
 Projeto e Engenharia de Software - Prof. Giovane Barcelos
 
-Demonstra os blocos táticos do DDD: Entity, Value Object, Aggregate.
-Domínio: Pedido (agregado) com itens (entidades) e preço (value object).
+Demonstra os blocos táticos do DDD: Entity, Value Object, Aggregate
+e Domain Service. Domínio: Pedido (agregado) com itens (entidades),
+preço (value object) e cálculo de frete (serviço de domínio).
 """
 
 from dataclasses import dataclass
@@ -79,6 +80,19 @@ class Pedido:
         return f"Pedido[{self.pedido_id}] {self.cliente} — {self._status} — {self.total()}"
 
 
+# ===== Domain Service (lógica que não pertence a uma única entidade) =====
+class CalculadoraFrete:
+    """Serviço de Domínio: calcula o frete de um pedido conforme o CEP destino.
+
+    Não é responsabilidade do agregado Pedido nem de uma Entity isolada —
+    depende de dados externos ao Pedido (CEP), por isso vive como serviço.
+    """
+
+    def calcular(self, pedido, cep_destino):
+        base = 15.0 if cep_destino.startswith("8") else 25.0
+        return Dinheiro(base)
+
+
 if __name__ == "__main__":
     print("=" * 60)
     print("  DDD — ENTIDADE, VALUE OBJECT E AGREGADO")
@@ -98,6 +112,13 @@ if __name__ == "__main__":
     pedido.fechar()
     print(f"\n  Status após fechar: {pedido.status}")
 
+    calculadora_frete = CalculadoraFrete()
+    frete_sp = calculadora_frete.calcular(pedido, "01310-000")
+    frete_df = calculadora_frete.calcular(pedido, "80010-000")
+    print(f"\n  Frete para CEP 01310-000 (não inicia com 8): {frete_sp}")
+    print(f"  Frete para CEP 80010-000 (inicia com 8): {frete_df}")
+
     print("\n✓ Entity: tem identidade (produto_id, pedido_id).")
     print("✓ Value Object: imutável, comparado por valor (Dinheiro).")
     print("✓ Aggregate: Pedido garante consistência dos itens.")
+    print("✓ Domain Service: CalculadoraFrete não pertence a uma única entidade.")

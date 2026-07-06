@@ -10,10 +10,11 @@ Demonstra como as fases são sequenciais e como o esforço se distribui.
 
 FASES_CASCATA = [
     ("Requisitos", 0.15, "Documento de requisitos aprovado"),
-    ("Projeto (Design)", 0.20, "Arquitetura e design detalhado"),
-    ("Implementação", 0.35, "Código fonte completo"),
+    ("Projeto (Design)", 0.15, "Arquitetura e design detalhado"),
+    ("Implementação", 0.30, "Código fonte completo"),
     ("Testes", 0.20, "Relatório de testes e bugs corrigidos"),
-    ("Manutenção", 0.10, "Sistema em produção"),
+    ("Implantação", 0.10, "Sistema em produção"),
+    ("Manutenção", 0.10, "Correções e evolução contínua"),
 ]
 
 

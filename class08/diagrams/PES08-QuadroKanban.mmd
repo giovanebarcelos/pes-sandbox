@@ -8,23 +8,23 @@ flowchart LR
         B1["US-01"]
         B2["US-02"]
     end
-    subgraph ToDo["📌 To Do (WIP: ∞)"]
-        T1["US-03"]
-        T2["US-04"]
+    subgraph Analise["🔍 Análise (WIP: 3)"]
+        A1["US-03"]
+        A2["US-04"]
     end
-    subgraph InProgress["🔄 In Progress (WIP: 3)"]
-        IP1["US-05"]
-        IP2["US-06"]
+    subgraph Desenvolvimento["💻 Desenvolvimento (WIP: 3)"]
+        D1["US-05"]
+        D2["US-06"]
     end
-    subgraph Review["👀 Review (WIP: 2)"]
-        R1["US-07"]
+    subgraph Testes["🧪 Testes (WIP: 2)"]
+        T1["US-07"]
     end
-    subgraph Done["✅ Done"]
-        D1["US-00"]
+    subgraph Pronto["✅ Pronto"]
+        P1["US-00"]
     end
-    Backlog --> ToDo --> InProgress --> Review --> Done
+    Backlog --> Analise --> Desenvolvimento --> Testes --> Pronto
     style Backlog fill:#64748B,color:#FFF
-    style ToDo fill:#2563EB,color:#FFF
-    style InProgress fill:#D97706,color:#FFF
-    style Review fill:#7C3AED,color:#FFF
-    style Done fill:#059669,color:#FFF
+    style Analise fill:#2563EB,color:#FFF
+    style Desenvolvimento fill:#D97706,color:#FFF
+    style Testes fill:#7C3AED,color:#FFF
+    style Pronto fill:#059669,color:#FFF

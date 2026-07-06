@@ -27,10 +27,17 @@ class Atividade:
 
 
 def calcular_caminho_critico(atividades):
-    """Calcula o forward pass (início e fim mais cedo) e identifica o caminho crítico."""
+    """Calcula o forward pass e o backward pass (CPM completo) e identifica
+    o caminho crítico como as atividades com folga zero (fim_tarde == fim_cedo)."""
+    por_nome = {a.nome: a for a in atividades}
+    sucessoras = {a.nome: [] for a in atividades}
+    for a in atividades:
+        for dep in a.dependencias:
+            sucessoras[dep].append(a.nome)
+
+    # Forward pass: início e fim mais cedo
     resolvidas = {}
     pendentes = list(atividades)
-
     while pendentes:
         for atv in list(pendentes):
             if all(dep in resolvidas for dep in atv.dependencias):
@@ -48,11 +55,26 @@ def calcular_caminho_critico(atividades):
     duracao_total = max(a.fim_cedo for a in atividades)
     custo_total = sum(a.custo_total for a in atividades)
 
-    # Identificar caminho crítico (folga zero)
-    # Simplificação: atividades cujo fim == duração total ou são predecessoras de quem está
-    criticas = [a for a in atividades if a.fim_cedo == duracao_total or
-                any(dep.fim_cedo == duracao_total for dep in atividades
-                    if a.nome in dep.dependencias)]
+    # Backward pass: fim mais tarde, propagado a partir das atividades sem sucessoras
+    fim_tarde = {}
+    pendentes = list(atividades)
+    while pendentes:
+        for atv in list(pendentes):
+            subsequentes = sucessoras[atv.nome]
+            if all(s in fim_tarde for s in subsequentes):
+                if not subsequentes:
+                    fim_tarde[atv.nome] = duracao_total
+                else:
+                    fim_tarde[atv.nome] = min(
+                        fim_tarde[s] - por_nome[s].duracao for s in subsequentes
+                    )
+                pendentes.remove(atv)
+                break
+        else:
+            raise ValueError("Dependência circular ou não resolvida.")
+
+    # Caminho crítico: toda atividade com folga zero (não só as predecessoras diretas da última)
+    criticas = [a for a in atividades if fim_tarde[a.nome] == a.fim_cedo]
 
     return duracao_total, custo_total, criticas
 
