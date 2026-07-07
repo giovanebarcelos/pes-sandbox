@@ -47,7 +47,7 @@ Cada diretório `classXX/` contém:
 | 14 | UA4 | Casos de Uso | PES14-CasosUsoBiblioteca.mmd | PES1401-CasosUso.py | PES1401-CasosUso.java |
 | 15 | UA4 | Diagrama de Classes e OO | PES15-HerancaFuncionario.mmd | PES1501-FuncionarioHeranca.py | PES1501-FuncionarioHeranca.java |
 | 16 | UA4 | Sequência e Atividades | PES16-Sequencia.mmd, PES16-Atividades.mmd | PES1601-FluxoPedido.py | PES1601-FluxoPedido.java |
-| 17 | UA4 | Projeto Parcial Locadora | PES17-CasosUsoLocadora.mmd, PES17-ClassesLocadora.mmd | PES1701-Locadora.py | PES1701-Locadora.java |
+| 17 | UA4 | Projeto Parcial Locadora | PES17-CasosUsoLocadora.mmd, PES17-ClassesLocadora.mmd | PES1701-Locadora.py, PES1702-LocadoraEsqueleto.py | PES1701-Locadora.java, PES1702-LocadoraEsqueleto.java |
 | 18 | UA5 | Princípios SOLID | PES18-CoesaoAcoplamento.mmd | PES1801-SOLID.py | PES1801-SOLID.java |
 | 19 | UA5 | MVC, MVP, MVVM | PES19-Camadas.mmd, PES19-MVC.mmd, PES19-MVP.mmd, PES19-MVVM.mmd | PES1901-MVC.py, PES1902-MVP.py, PES1903-MVVM.py | PES1901-MVC.java, PES1902-MVP.java, PES1903-MVVM.java |
 | 20 | UA5 | Clean Architecture, Hexagonal, Onion | PES20-CleanArch.mmd, PES20-Hexagonal.mmd, PES20-Onion.mmd, PES20-ComparativoArquiteturas.mmd | PES2001-Hexagonal.py, PES2002-Onion.py | PES2001-Hexagonal.java, PES2002-Onion.java |
