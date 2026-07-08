@@ -16,6 +16,7 @@ Descrever o propósito deste documento e o sistema a ser desenvolvido.
 Definir o que está dentro e fora do escopo do sistema.
 
 ### 1.3 Definições e Acrônimos
+
 | Termo | Definição |
 |---|---|
 | DRS | Documento de Requisitos de Software |
