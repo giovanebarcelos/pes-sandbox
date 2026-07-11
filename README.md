@@ -1,6 +1,6 @@
 # Repository — Projeto e Engenharia de Software
 
-**Repositório de exemplos reais do curso** | **28 aulas** | **Prof. Giovane Barcelos**
+**Repositório de exemplos reais do curso** | **28 aulas** | **Prof. Giovane Barcelos** — [💻 Códigos Fonte](https://github.com/giovanebarcelos/pes-sandbox)
 
 Este repositório contém os artefatos práticos de todas as 28 aulas da disciplina Projeto e Engenharia de Software (PES). Cada `classXX/` contém diagramas Mermaid (`.mmd`), código Python e código Java, garantindo que **nenhuma aula fique sem exemplo real executável**.
 
@@ -89,4 +89,4 @@ javac PESXXYY-NomeDoArquivo.java && java NomeDaClasse
 
 ## Licença
 
-MIT — uso acadêmico livre. Prof. Giovane Barcelos.
+MIT — uso acadêmico livre. Prof. Giovane Barcelos — [💻 Códigos Fonte](https://github.com/giovanebarcelos/pes-sandbox).
