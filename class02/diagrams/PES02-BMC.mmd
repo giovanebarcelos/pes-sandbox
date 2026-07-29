@@ -1,0 +1,36 @@
+%% PES02 - Business Model Canvas (BMC): o Negócio em Uma Página
+%% Aula 02: Fundamentos de Gerenciamento de Projetos
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+%% Referência: Osterwalder & Pigneur, "Business Model Generation" (2010).
+%% BMC descreve o NEGÓCIO; PMCanvas descreve o PROJETO — o software serve ao negócio.
+flowchart TD
+    subgraph BMC["Business Model Canvas — o Negócio em Uma Página"]
+        direction TB
+        PC["PARCEIROS-CHAVE<br/>fornecedores, aliados"]
+        AC["ATIVIDADES-CHAVE<br/>produção, plataforma"]
+        RC["RECURSOS-CHAVE<br/>equipe, dados, tecnologia"]
+        PV["PROPOSTA DE VALOR<br/>o que resolve para o cliente"]
+        RL["RELACIONAMENTO<br/>como fideliza o cliente"]
+        CN["CANAIS<br/>como entrega ao cliente"]
+        SG["SEGMENTOS<br/>para quem cria valor"]
+        EC["ESTRUTURA DE CUSTOS<br/>o que se gasta"]
+        FR["FONTES DE RECEITA<br/>como ganha"]
+    end
+    PC --- AC
+    AC --- RC
+    RC --- PV
+    PV --- RL
+    RL --- CN
+    CN --- SG
+    EC --- FR
+    style PC fill:#2563EB,color:#FFF
+    style AC fill:#EA580C,color:#FFF
+    style RC fill:#059669,color:#FFF
+    style PV fill:#7C3AED,color:#FFF
+    style RL fill:#D97706,color:#FFF
+    style CN fill:#0891B2,color:#FFF
+    style SG fill:#EA580C,color:#FFF
+    style EC fill:#D97706,color:#FFF
+    style FR fill:#059669,color:#FFF
