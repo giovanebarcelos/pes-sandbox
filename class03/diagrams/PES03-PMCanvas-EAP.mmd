@@ -1,0 +1,45 @@
+%% PES03 - PMCanvas Facilita a Construção da EAP/WBS
+%% Aula 03: Planejamento — Escopo, Prazo, Custo e Qualidade
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+%% Referência: http://pmcanvas.com.br/ — o bloco PRODUTO do PMCanvas já é o nível 2 da EAP.
+flowchart LR
+    subgraph Canvas["PMCanvas — Bloco PRODUTO"]
+        direction TB
+        PROD["PRODUTO<br/>(o que entregar)"]
+        P1["1. Módulo de Catálogo"]
+        P2["2. Módulo de Carrinho"]
+        P3["3. Módulo de Pagamento"]
+        P4["4. Infraestrutura"]
+        PROD --- P1
+        PROD --- P2
+        PROD --- P3
+        PROD --- P4
+    end
+    subgraph EAP["EAP / WBS (nível 2)"]
+        direction TB
+        RAIZ["Sistema de E-commerce"]
+        E1["Catálogo"]
+        E2["Carrinho"]
+        E3["Pagamento"]
+        E4["Infraestrutura"]
+        RAIZ --- E1
+        RAIZ --- E2
+        RAIZ --- E3
+        RAIZ --- E4
+    end
+    P1 -->|"decompor"| E1
+    P2 -->|"decompor"| E2
+    P3 -->|"decompor"| E3
+    P4 -->|"decompor"| E4
+    style PROD fill:#2563EB,color:#FFF
+    style RAIZ fill:#EA580C,color:#FFF
+    style P1 fill:#FFFFFF,color:#334155
+    style P2 fill:#FFFFFF,color:#334155
+    style P3 fill:#FFFFFF,color:#334155
+    style P4 fill:#FFFFFF,color:#334155
+    style E1 fill:#FFFFFF,color:#334155
+    style E2 fill:#FFFFFF,color:#334155
+    style E3 fill:#FFFFFF,color:#334155
+    style E4 fill:#FFFFFF,color:#334155

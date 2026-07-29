@@ -1,0 +1,39 @@
+%% PES02 - PMCanvas: o Projeto em Uma Página
+%% Aula 02: Fundamentos de Gerenciamento de Projetos
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Mermaid compatível com PlantUML (https://plantuml.com/):
+%% para renderizar no PlantUML, envolva o conteúdo abaixo em @startmermaid ... @endmermaid.
+%% Referência: http://pmcanvas.com.br/ — PMCanvas sintetiza Termo de Abertura e Plano em 10 blocos.
+flowchart TD
+    subgraph PMCanvas["PMCanvas — o Projeto em Uma Página"]
+        direction TB
+        J["JUSTIFICATIVA<br/>por que fazer"]
+        O["OBJETIVO<br/>o que alcançar"]
+        P["PRODUTO<br/>o que entregar"]
+        S["STAKEHOLDERS<br/>quem se afeta"]
+        E["EQUIPE<br/>quem faz"]
+        PR["PREMISSAS<br/>o que se presume"]
+        R["RESTRIÇÕES<br/>limites dados"]
+        RI["RISCOS<br/>o que pode falhar"]
+        PZ["PRAZO<br/>quando entregar"]
+        C["CUSTO<br/>quanto custa"]
+    end
+    J --- O
+    O --- P
+    P --- S
+    S --- E
+    E --- PR
+    PR --- R
+    R --- RI
+    RI --- PZ
+    PZ --- C
+    style J fill:#2563EB,color:#FFF
+    style O fill:#EA580C,color:#FFF
+    style P fill:#059669,color:#FFF
+    style S fill:#7C3AED,color:#FFF
+    style E fill:#0891B2,color:#FFF
+    style PR fill:#D97706,color:#FFF
+    style R fill:#EA580C,color:#FFF
+    style RI fill:#2563EB,color:#FFF
+    style PZ fill:#7C3AED,color:#FFF
+    style C fill:#059669,color:#FFF
