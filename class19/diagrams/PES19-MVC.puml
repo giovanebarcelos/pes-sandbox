@@ -1,0 +1,25 @@
+@startuml PES19-MVC
+' PES19 - Padrão MVC
+' Aula 19: MVC, MVP e MVVM
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES19-MVC.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+left to right direction
+
+actor "Usuário" as User #334155
+rectangle "View\n(Interface)" as View #2563EB;text:white
+rectangle "Controller\n(Lógica de fluxo)" as Controller #EA580C;text:white
+rectangle "Model\n(Dados + Regras)" as Model #059669;text:white
+
+User --> View
+View --> Controller
+Controller --> Model
+Model --> View
+Controller --> View
+@enduml

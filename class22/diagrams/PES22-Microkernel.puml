@@ -1,0 +1,34 @@
+@startuml PES22-Microkernel
+' PES22 - Microkernel / Plugin Architecture
+' Aula 22: Microsserviços e Arquiteturas Distribuídas
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES22-Microkernel.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "Microkernel (Core)\nFuncionalidades mínimas\nessenciais" as Core #EF4444;text:white
+rectangle "Plugin Registry\n(gerencia extensões)" as Registry #D97706;text:white
+component "Plugin PDF\nExportação em PDF" as P1 #2563EB;text:white
+component "Plugin CSV\nExportação em CSV" as P2 #2563EB;text:white
+component "Plugin Email\nNotificação por e-mail" as P3 #059669;text:white
+component "Plugin SMS\nNotificação por SMS" as P4 #059669;text:white
+interface "IExportPlugin\n(contrato do plugin)" as Interface #7C3AED
+interface "INotifyPlugin\n(contrato do plugin)" as Interface2 #7C3AED
+
+Core --> Registry
+Registry --> P1
+Registry --> P2
+Registry --> P3
+Registry --> P4
+P1 ..|> Interface : implementa
+P2 ..|> Interface : implementa
+P3 ..|> Interface2 : implementa
+P4 ..|> Interface2 : implementa
+Interface -- Core
+Interface2 -- Core
+@enduml

@@ -1,0 +1,38 @@
+@startuml PES08-QuadroKanban
+' PES08 - Quadro Kanban com Limite de WIP
+' Aula 08: Kanban e Comparação de Abordagens
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES08-QuadroKanban.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+left to right direction
+
+rectangle "Backlog" as Backlog #64748B;text:white {
+  card "US-01" as B1
+  card "US-02" as B2
+}
+rectangle "Análise (WIP: 3)" as Analise #2563EB;text:white {
+  card "US-03" as A1
+  card "US-04" as A2
+}
+rectangle "Desenvolvimento (WIP: 3)" as Desenvolvimento #D97706;text:white {
+  card "US-05" as D1
+  card "US-06" as D2
+}
+rectangle "Testes (WIP: 2)" as Testes #7C3AED;text:white {
+  card "US-07" as T1
+}
+rectangle "Pronto" as Pronto #059669;text:white {
+  card "US-00" as P1
+}
+
+Backlog --> Analise
+Analise --> Desenvolvimento
+Desenvolvimento --> Testes
+Testes --> Pronto
+@enduml

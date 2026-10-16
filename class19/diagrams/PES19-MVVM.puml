@@ -1,0 +1,24 @@
+@startuml PES19-MVVM
+' PES19 - Padrão MVVM (Model-View-ViewModel)
+' Aula 19: MVC, MVP e MVVM
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES19-MVVM.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+left to right direction
+
+actor "Usuário" as User #334155
+rectangle "View\n(XAML / Layout)" as View #2563EB;text:white
+rectangle "ViewModel\n(Estado + Comandos)" as ViewModel #EA580C;text:white
+rectangle "Model\n(Dados + Regras)" as Model #059669;text:white
+
+User --> View
+View <--> ViewModel : data binding\nbidirecional
+ViewModel --> Model
+Model ..> ViewModel : notifica
+@enduml

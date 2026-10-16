@@ -1,0 +1,27 @@
+@startuml PES16-Atividades
+' PES16 - Diagrama de Atividades: Fluxo de Pedido
+' Aula 16: Diagramas de Sequência e de Atividades
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES16-Atividades.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam ArrowColor #334155
+
+start
+#2563EB:<color:#FFF>Cliente seleciona produtos</color>;
+if (Itens disponíveis?) then (Sim)
+  #059669:<color:#FFF>Reservar itens no estoque</color>;
+  if (Pagamento aprovado?) then (Sim)
+    #059669:<color:#FFF>Confirmar pedido</color>;
+    #2563EB:<color:#FFF>Enviar confirmação por email</color>;
+    #059669:<color:#FFF>Pedido confirmado</color>;
+    stop
+  else (Não)
+    #EF4444:<color:#FFF>Liberar itens reservados</color>;
+  endif
+else (Não)
+  #EF4444:<color:#FFF>Notificar indisponibilidade</color>;
+endif
+#64748B:<color:#FFF>Pedido cancelado</color>;
+stop
+@enduml

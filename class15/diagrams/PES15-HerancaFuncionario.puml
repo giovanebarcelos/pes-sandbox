@@ -1,0 +1,30 @@
+@startuml PES15-HerancaFuncionario
+' PES15 - Diagrama de Classes: Herança Funcionario
+' Aula 15: Diagrama de Classes e Orientação a Objetos
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES15-HerancaFuncionario.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+abstract class Funcionario {
+  - nome : String
+  - salarioBase : double
+  + getNome() : String
+  + getSalarioBase() : double
+  + {abstract} calcularSalario() : double
+}
+
+class Desenvolvedor {
+  - linguagem : String
+  + calcularSalario() : double
+}
+
+class Gerente {
+  - bonus : double
+  + calcularSalario() : double
+}
+
+Funcionario <|-- Desenvolvedor
+Funcionario <|-- Gerente
+@enduml

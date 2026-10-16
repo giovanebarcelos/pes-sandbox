@@ -1,0 +1,21 @@
+@startwbs PES03-EAP
+' PES03 - EAP/WBS (Estrutura Analítica do Projeto)
+' Aula 03: Planejamento — Escopo, Prazo, Custo e Qualidade
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES03-EAP.mmd (Mermaid).
+
+*[#2563EB] <color:#FFF>Sistema de Biblioteca</color>
+**[#EA580C] <color:#FFF>1. Gerenciamento</color>
+*** 1.1 Plano de Projeto
+*** 1.2 Reuniões
+**[#7C3AED] <color:#FFF>2. Requisitos</color>
+*** 2.1 Entrevistas
+*** 2.2 DRS
+**[#059669] <color:#FFF>3. Desenvolvimento</color>
+*** 3.1 Front-end
+*** 3.2 Back-end
+*** 3.3 Banco de Dados
+**[#D97706] <color:#FFF>4. Testes</color>
+*** 4.1 Testes Unitários
+*** 4.2 Testes Integrados
+@endwbs

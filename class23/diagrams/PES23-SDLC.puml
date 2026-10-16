@@ -1,0 +1,31 @@
+@startuml PES23-SDLC
+' PES23 - Ciclo de Vida de Desenvolvimento de Software (SDLC)
+' Aula 23: Ciclo de Vida de Software
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES23-SDLC.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+left to right direction
+
+rectangle "Concepção" as P1 #2563EB;text:white
+rectangle "Requisitos" as P2 #EA580C;text:white
+rectangle "Projeto" as P3 #7C3AED;text:white
+rectangle "Implementação" as P4 #059669;text:white
+rectangle "Testes" as P5 #D97706;text:white
+rectangle "Implantação" as P6 #2563EB;text:white
+rectangle "Manutenção" as P7 #EA580C;text:white
+rectangle "Descontinuação" as P8 #64748B;text:white
+
+P1 --> P2
+P2 --> P3
+P3 --> P4
+P4 --> P5
+P5 --> P6
+P6 --> P7
+P7 --> P8
+@enduml

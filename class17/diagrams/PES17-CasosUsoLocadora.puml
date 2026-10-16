@@ -1,0 +1,31 @@
+@startuml PES17-CasosUsoLocadora
+' PES17 - Casos de Uso: Mini-Sistema Locadora
+' Aula 17: Projeto Parcial — Modelagem UML + Implementação OO
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES17-CasosUsoLocadora.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam ArrowColor #334155
+left to right direction
+
+actor "Atendente" as ATOR1 #7C3AED
+actor "Cliente" as ATOR2 #059669
+
+rectangle "Locadora de Veículos" as Sistema #F0F4F8;line:2563EB {
+  usecase "UC01: Cadastrar veículo" as UC1
+  usecase "UC02: Listar veículos disponíveis" as UC2
+  usecase "UC03: Alugar veículo" as UC3
+  usecase "UC04: Devolver veículo" as UC4
+  usecase "UC05: Calcular valor da locação" as UC5
+}
+
+ATOR1 -- UC1
+ATOR1 -- UC2
+ATOR1 -- UC3
+ATOR1 -- UC4
+UC2 -- ATOR2
+UC3 -- ATOR2
+
+UC3 ..> UC5 : <<include>>
+UC4 ..> UC5 : <<include>>
+@enduml

@@ -1,0 +1,23 @@
+@startuml PES05-Espiral
+' PES05 - Modelo Espiral (Boehm)
+' Aula 05: Modelos Tradicionais — Cascata e Espiral
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES05-Espiral.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "Determinar Objetivos" as A #2563EB;text:white
+rectangle "Avaliar Riscos" as B #EF4444;text:white
+rectangle "Desenvolver e Testar" as C #059669;text:white
+rectangle "Planejar Próxima Iteração" as D #7C3AED;text:white
+
+A -right-> B
+B -down-> C
+C -left-> D
+D -up-> A
+@enduml

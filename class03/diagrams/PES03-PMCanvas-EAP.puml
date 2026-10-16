@@ -1,0 +1,44 @@
+@startuml PES03-PMCanvas-EAP
+' PES03 - PMCanvas Facilita a Construção da EAP/WBS
+' Aula 03: Planejamento — Escopo, Prazo, Custo e Qualidade
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES03-PMCanvas-EAP.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+left to right direction
+
+rectangle "PMCanvas — Bloco PRODUTO" as Canvas {
+  rectangle "PRODUTO\n(o que entregar)" as PROD #2563EB;text:white
+  rectangle "1. Módulo de Catálogo" as P1 #FFFFFF
+  rectangle "2. Módulo de Carrinho" as P2 #FFFFFF
+  rectangle "3. Módulo de Pagamento" as P3 #FFFFFF
+  rectangle "4. Infraestrutura" as P4 #FFFFFF
+}
+
+rectangle "EAP / WBS (nível 2)" as EAP {
+  rectangle "Sistema de E-commerce" as RAIZ #EA580C;text:white
+  rectangle "Catálogo" as E1 #FFFFFF
+  rectangle "Carrinho" as E2 #FFFFFF
+  rectangle "Pagamento" as E3 #FFFFFF
+  rectangle "Infraestrutura" as E4 #FFFFFF
+}
+
+PROD -- P1
+PROD -- P2
+PROD -- P3
+PROD -- P4
+RAIZ -- E1
+RAIZ -- E2
+RAIZ -- E3
+RAIZ -- E4
+
+P1 --> E1 : decompor
+P2 --> E2 : decompor
+P3 --> E3 : decompor
+P4 --> E4 : decompor
+@enduml

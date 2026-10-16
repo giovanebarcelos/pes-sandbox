@@ -1,0 +1,26 @@
+@startuml PES16-Sequencia
+' PES16 - Diagrama de Sequência: Realizar Pedido
+' Aula 16: Diagramas de Sequência e de Atividades
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES16-Sequencia.mmd (Mermaid).
+
+skinparam shadowing false
+autonumber
+
+actor Cliente
+participant "Interface" as UI
+participant "PedidoService" as PedidoSvc
+participant "EstoqueService" as EstoqueSvc
+participant "PagamentoService" as PagamentoSvc
+
+Cliente -> UI : Seleciona produtos
+UI -> PedidoSvc : criarPedido(itens)
+activate PedidoSvc
+PedidoSvc -> EstoqueSvc : verificarDisponibilidade(itens)
+EstoqueSvc --> PedidoSvc : disponível
+PedidoSvc -> PagamentoSvc : processarPagamento(valor)
+PagamentoSvc --> PedidoSvc : pagamento aprovado
+PedidoSvc --> UI : pedido criado
+deactivate PedidoSvc
+UI --> Cliente : confirmação do pedido
+@enduml

@@ -1,0 +1,44 @@
+@startuml PES06-Incremental
+' PES06 - Modelo Incremental
+' Aula 06: Modelos Incremental e Prototipação
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES06-Incremental.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "Incremento 1 — Núcleo" as I1 #2563EB;text:white {
+  rectangle "Análise" as A1 #FFFFFF
+  rectangle "Projeto" as B1 #FFFFFF
+  rectangle "Implementação" as C1 #FFFFFF
+  rectangle "Entrega v1" as D1 #FFFFFF
+}
+rectangle "Incremento 2 — Funcionalidades" as I2 #EA580C;text:white {
+  rectangle "Análise" as A2 #FFFFFF
+  rectangle "Projeto" as B2 #FFFFFF
+  rectangle "Implementação" as C2 #FFFFFF
+  rectangle "Entrega v2" as D2 #FFFFFF
+}
+rectangle "Incremento 3 — Refinamento" as I3 #059669;text:white {
+  rectangle "Análise" as A3 #FFFFFF
+  rectangle "Projeto" as B3 #FFFFFF
+  rectangle "Implementação" as C3 #FFFFFF
+  rectangle "Entrega v3" as D3 #FFFFFF
+}
+
+A1 -right-> B1
+B1 -right-> C1
+C1 -right-> D1
+A2 -right-> B2
+B2 -right-> C2
+C2 -right-> D2
+A3 -right-> B3
+B3 -right-> C3
+C3 -right-> D3
+D1 --> A2
+D2 --> A3
+@enduml

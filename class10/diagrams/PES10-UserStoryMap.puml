@@ -1,0 +1,27 @@
+@startuml PES10-UserStoryMap
+' PES10 - Mapa de User Stories
+' Aula 10: Levantamento e Elicitação de Requisitos
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES10-UserStoryMap.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "Épico: Gestão de Usuários" as A #2563EB;text:white
+rectangle "Épico: Catálogo de Produtos" as B #EA580C;text:white
+card "Como usuário, quero me cadastrar\npara acessar o sistema" as US1 #F0F4F8
+card "Como usuário, quero fazer login\npara usar minhas funcionalidades" as US2 #F0F4F8
+card "Como admin, quero listar usuários\npara gerenciar acessos" as US3 #F0F4F8
+card "Como cliente, quero buscar produtos\npara encontrar o que preciso" as US4 #F0F4F8
+card "Como cliente, quero filtrar por categoria\npara navegar melhor" as US5 #F0F4F8
+
+A --> US1
+A --> US2
+A --> US3
+B --> US4
+B --> US5
+@enduml

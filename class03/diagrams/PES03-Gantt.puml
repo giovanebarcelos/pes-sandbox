@@ -1,0 +1,37 @@
+@startgantt PES03-Gantt
+' PES03 - Gráfico de Gantt Simplificado
+' Aula 03: Planejamento — Escopo, Prazo, Custo e Qualidade
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES03-Gantt.mmd (Mermaid).
+
+title Cronograma — Sistema de Biblioteca
+Project starts 2025-08-01
+printscale weekly
+
+-- Gerenciamento --
+[Plano de Projeto] as [a1] starts 2025-08-01 and lasts 7 days
+[Reuniões semanais] as [a2] starts 2025-08-01 and lasts 56 days
+
+-- Requisitos --
+[Entrevistas] as [b1] starts 2025-08-08 and lasts 7 days
+[Documento de Requisitos] as [b2] lasts 10 days
+[b2] starts at [b1]'s end
+
+-- Desenvolvimento --
+[Back-end] as [c1] lasts 21 days
+[c1] starts at [b2]'s end
+[Front-end] as [c2] lasts 21 days
+[c2] starts at [b2]'s end
+[Banco de Dados] as [c3] lasts 14 days
+[c3] starts at [b2]'s end
+
+-- Testes --
+[Testes Unitários] as [d1] lasts 7 days
+[d1] starts at [c1]'s end
+[Testes Integrados] as [d2] lasts 7 days
+[d2] starts at [d1]'s end
+
+-- Entrega --
+[Implantação] as [e1] lasts 3 days
+[e1] starts at [d2]'s end
+@endgantt

@@ -1,0 +1,31 @@
+@startuml PES20-Onion
+' PES20 - Onion Architecture (Camadas Concêntricas)
+' Aula 20: Clean Architecture, Hexagonal e Onion
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES20-Onion.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "Presentation" as Pres #64748B;text:white {
+  rectangle "Controllers\nViews / APIs\nCLI / Web" as P #FFFFFF
+}
+rectangle "Application" as App #D97706;text:white {
+  rectangle "Serviços de aplicação\nCasos de Uso\nDTOs" as S #FFFFFF
+}
+rectangle "Infrastructure" as Infra #2563EB;text:white {
+  rectangle "Repositórios concretos\nORM, APIs externas\nServiços de e-mail" as I #FFFFFF
+}
+rectangle "Domain (Centro)" as Core #EF4444;text:white {
+  rectangle "Entidades\nValue Objects\nInterfaces repositório" as E #FFFFFF
+}
+
+Pres --> App
+App --> Core
+Infra --> Core
+Pres ..> Infra : resolvida via DI\n(não é dependência de compilação)
+@enduml

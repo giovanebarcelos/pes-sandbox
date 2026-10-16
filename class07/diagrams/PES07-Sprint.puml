@@ -1,0 +1,25 @@
+@startuml PES07-Sprint
+' PES07 - Ciclo da Sprint
+' Aula 07: Metodologias Ágeis — Scrum e XP
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES07-Sprint.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "Sprint (2 semanas)" as Sprint #059669;text:white {
+  rectangle "Dia 1: Planning" as D1 #FFFFFF
+  rectangle "Dias 2-9: Desenvolvimento" as D2 #FFFFFF
+  rectangle "Daily Scrum (todos os dias)" as D3 #FFFFFF
+  rectangle "Dia 10: Review + Retro" as D4 #FFFFFF
+}
+
+D1 --> D2
+D2 -right-> D3
+D3 --> D2
+D2 --> D4
+@enduml

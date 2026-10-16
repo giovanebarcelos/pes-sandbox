@@ -1,0 +1,35 @@
+@startuml PES21-EventSourcing
+' PES21 - Padrão Event Sourcing
+' Aula 21: DDD, CQRS e Event Sourcing
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES21-EventSourcing.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+actor "Usuário" as User #334155
+rectangle "Aplicação" as App #2563EB;text:white
+database "Event Store\n(log imutável)" as ES #EA580C;text:white
+rectangle "Projections\n(estado atual derivado)" as PJ #059669;text:white
+
+rectangle "Event Log" as EventLog #7C3AED;text:white {
+  rectangle "ContaCriada(1001, 0)" as E1 #FFFFFF
+  rectangle "DepositoRealizado(1001, 500)" as E2 #FFFFFF
+  rectangle "SaqueRealizado(1001, 100)" as E3 #FFFFFF
+  rectangle "DepositoRealizado(1001, 200)" as E4 #FFFFFF
+}
+
+User --> App
+App --> ES : comando
+ES --> App : eventos passados
+ES --> PJ : reproduz eventos
+PJ --> App : consulta rápida
+ES -- EventLog
+E1 -[hidden]-> E2
+E2 -[hidden]-> E3
+E3 -[hidden]-> E4
+@enduml

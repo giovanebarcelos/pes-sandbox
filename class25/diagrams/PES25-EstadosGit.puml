@@ -1,0 +1,20 @@
+@startuml PES25-EstadosGit
+' PES25 - Estados de um Arquivo no Git
+' Aula 25: Gerência de Configuração e Introdução ao Git
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES25-EstadosGit.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam ArrowColor #334155
+hide empty description
+
+state "Working Directory" as WD #D97706 : Untracked / Modified
+state "Staging Area" as SA #2563EB : Staged
+state "Local Repository" as LR #059669 : Committed
+state "Remote Repository" as RR #7C3AED : GitHub
+
+WD -right-> SA : git add
+SA -right-> LR : git commit
+LR -right-> RR : git push
+RR -left-> LR : git pull / fetch
+@enduml

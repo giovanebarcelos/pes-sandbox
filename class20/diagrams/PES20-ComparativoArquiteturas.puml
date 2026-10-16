@@ -1,0 +1,49 @@
+@startmindmap PES20-ComparativoArquiteturas
+' PES20 - Mapa Comparativo de Arquiteturas de Software
+' Aula 20: Clean Architecture, Hexagonal e Onion
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES20-ComparativoArquiteturas.mmd (Mermaid).
+
+*[#2563EB] <color:#FFF>Arquiteturas de Software</color>
+**[#059669]:<color:#FFF>MVC</color>
+<color:#FFF>Model-View-Controller</color>;
+***:Aplicações Web tradicionais
+ASP.NET, Spring MVC, Django;
+*** Controller → Model → View
+*** Separação simples e clara
+**[#059669]:<color:#FFF>MVP</color>
+<color:#FFF>Model-View-Presenter</color>;
+***:Interfaces ricas, WinForms
+Android (pré-ViewModel);
+*** View → Presenter → Model
+*** View passiva — fácil de testar
+**[#EA580C]:<color:#FFF>MVVM</color>
+<color:#FFF>Model-View-ViewModel</color>;
+***:WPF, Xamarin, SwiftUI
+Angular, Vue.js;
+***:View ↔ ViewModel ↔ Model
+(data binding);
+*** Reatividade + desacoplamento total
+left side
+**[#7C3AED] <color:#FFF>Clean Architecture</color>
+***:Sistemas enterprise
+Microsserviços;
+***:Dependência → dentro
+(regra da dependência);
+***:Domínio 100% isolado
+de frameworks;
+**[#D97706] <color:#FFF>Hexagonal (Ports & Adapters)</color>
+***:Microsserviços, APIs
+Sistemas testáveis;
+***:Portas (interfaces) +
+Adaptadores (implementações);
+***:Troca de infraestrutura
+sem tocar no domínio;
+**[#EF4444] <color:#FFF>Onion Architecture</color>
+***:Sistemas DDD
+Aplicações corporativas;
+***:Camadas concêntricas:
+Domain → App → Infra → Presentation;
+***:Acoplamento zero
+com camadas externas;
+@endmindmap

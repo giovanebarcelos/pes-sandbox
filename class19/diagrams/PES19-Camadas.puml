@@ -1,0 +1,30 @@
+@startuml PES19-Camadas
+' PES19 - Arquitetura em Camadas
+' Aula 19: MVC, MVP e MVVM
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES19-Camadas.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "Apresentação (UI)" as Presentation #2563EB;text:white {
+  rectangle "Controllers / Views" as P1 #FFFFFF
+}
+rectangle "Aplicação (Business)" as Application #EA580C;text:white {
+  rectangle "Services / DTOs" as A1 #FFFFFF
+}
+rectangle "Domínio" as Domain #7C3AED;text:white {
+  rectangle "Entidades / Regras" as D1 #FFFFFF
+}
+rectangle "Infraestrutura" as Infrastructure #059669;text:white {
+  rectangle "Repository / DB / APIs" as I1 #FFFFFF
+}
+
+Presentation --> Application
+Application --> Domain
+Domain --> Infrastructure
+@enduml

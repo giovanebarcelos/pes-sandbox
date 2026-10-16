@@ -1,0 +1,26 @@
+@startuml PES05-Cascata
+' PES05 - Modelo Cascata (Waterfall)
+' Aula 05: Modelos Tradicionais — Cascata e Espiral
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES05-Cascata.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "Requisitos" as A #2563EB;text:white
+rectangle "Projeto (Design)" as B #EA580C;text:white
+rectangle "Implementação" as C #059669;text:white
+rectangle "Verificação / Testes" as D #D97706;text:white
+rectangle "Implantação" as E #DC2626;text:white
+rectangle "Manutenção" as F #7C3AED;text:white
+
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+@enduml

@@ -1,0 +1,43 @@
+@startuml PES26-Branches
+' PES26 - Branches no Git
+' Aula 26: Fluxos de Trabalho com Git e Colaboração
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES26-Branches.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam ArrowColor #334155
+skinparam defaultTextAlignment center
+skinparam rectangle {
+  RoundCorner 25
+}
+left to right direction
+
+rectangle "init" as C1 #2563EB;text:white
+rectangle "setup" as C2 #2563EB;text:white
+rectangle "merge\nfeature/login" as M1 #2563EB;text:white
+rectangle "merge\nfeature/pagamento" as M2 #2563EB;text:white
+rectangle "release v1.0" as C3 #2563EB;text:white
+
+rectangle "add login" as L1 #059669;text:white
+rectangle "add tests" as L2 #059669;text:white
+
+rectangle "add pagamento" as P1 #EA580C;text:white
+
+C1 --> C2
+C2 --> M1
+M1 --> M2
+M2 --> C3
+
+C2 --> L1 : branch\nfeature/login
+L1 --> L2
+L2 --> M1 : merge
+
+M1 --> P1 : branch\nfeature/pagamento
+P1 --> M2 : merge
+
+legend right
+  <back:#2563EB><color:#FFF> main </color></back>
+  <back:#059669><color:#FFF> feature/login </color></back>
+  <back:#EA580C><color:#FFF> feature/pagamento </color></back>
+endlegend
+@enduml

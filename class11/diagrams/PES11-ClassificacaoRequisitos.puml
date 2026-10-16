@@ -1,0 +1,15 @@
+@startwbs PES11-ClassificacaoRequisitos
+' PES11 - Classificação de Requisitos (RF × RNF / FURPS+)
+' Aula 11: Requisitos Funcionais e Não Funcionais
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES11-ClassificacaoRequisitos.mmd (Mermaid).
+
+*[#2563EB] <color:#FFF>Requisitos</color>
+**[#059669] <color:#FFF>Funcionais (RF)</color>\n<color:#FFF>O que o sistema faz</color>
+**[#EA580C] <color:#FFF>Não Funcionais (RNF)</color>\n<color:#FFF>Como o sistema é</color>
+*** Usabilidade\n(F)
+*** Confiabilidade\n(U)
+*** Desempenho\n(R)
+*** Suportabilidade\n(P)
+*** + Design,\nImplementação,\nInterface, Físicos
+@endwbs

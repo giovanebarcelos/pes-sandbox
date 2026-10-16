@@ -1,0 +1,33 @@
+@startuml PES21-CQRS
+' PES21 - Padrão CQRS (Command Query Responsibility Segregation)
+' Aula 21: DDD, CQRS e Event Sourcing
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES21-CQRS.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+actor "Cliente" as Client #334155
+rectangle "Roteador CQRS" as Router #D97706;text:white
+queue "Command Bus" as CmdBus #EA580C;text:white
+queue "Query Bus" as QryBus #2563EB;text:white
+rectangle "Command Handler\n(valida + executa)" as Handler #EA580C;text:white
+rectangle "Domain Model\n(regras de negócio)" as Domain #EF4444;text:white
+database "DB Escrita\n(normalizada)" as WriteDB #059669;text:white
+database "DB Leitura\n(denormalizada)" as ReadDB #7C3AED;text:white
+rectangle "Query Handler\n(consulta otimizada)" as Query #2563EB;text:white
+
+Client --> Router
+Router --> CmdBus : Commands (escrita)
+Router --> QryBus : Queries (leitura)
+CmdBus --> Handler
+Handler --> Domain
+Domain --> WriteDB
+WriteDB .right.> ReadDB : sincronização\neventos
+QryBus --> Query
+Query --> ReadDB
+@enduml

@@ -1,0 +1,24 @@
+@startuml PES24-TiposManutencao
+' PES24 - Tipos de Manutenção de Software
+' Aula 24: Tipos de Manutenção e Evolução de Software
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES24-TiposManutencao.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "Manutenção de Software" as M #2563EB;text:white
+rectangle "Corretiva\n(20%)\nCorrigir defeitos" as C #EF4444;text:white
+rectangle "Adaptativa\n(25%)\nAdaptar a novo ambiente" as A #D97706;text:white
+rectangle "Perfectiva\n(50%)\nMelhorar desempenho/usabilidade" as P #059669;text:white
+rectangle "Preventiva\n(5%)\nPrevenir falhas futuras" as PR #7C3AED;text:white
+
+M --> C
+M --> A
+M --> P
+M --> PR
+@enduml

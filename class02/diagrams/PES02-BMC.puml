@@ -1,0 +1,33 @@
+@startuml PES02-BMC
+' PES02 - Business Model Canvas (BMC): o Negócio em Uma Página
+' Aula 02: Fundamentos de Gerenciamento de Projetos
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES02-BMC.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "Business Model Canvas — o Negócio em Uma Página" as BMC {
+  rectangle "PARCEIROS-CHAVE\nfornecedores, aliados" as PC #2563EB;text:white
+  rectangle "ATIVIDADES-CHAVE\nprodução, plataforma" as AC #EA580C;text:white
+  rectangle "RECURSOS-CHAVE\nequipe, dados, tecnologia" as RC #059669;text:white
+  rectangle "PROPOSTA DE VALOR\no que resolve para o cliente" as PV #7C3AED;text:white
+  rectangle "RELACIONAMENTO\ncomo fideliza o cliente" as RL #D97706;text:white
+  rectangle "CANAIS\ncomo entrega ao cliente" as CN #0891B2;text:white
+  rectangle "SEGMENTOS\npara quem cria valor" as SG #EA580C;text:white
+  rectangle "ESTRUTURA DE CUSTOS\no que se gasta" as EC #D97706;text:white
+  rectangle "FONTES DE RECEITA\ncomo ganha" as FR #059669;text:white
+}
+
+PC -- AC
+AC -- RC
+RC -- PV
+PV -- RL
+RL -- CN
+CN -- SG
+EC -- FR
+@enduml

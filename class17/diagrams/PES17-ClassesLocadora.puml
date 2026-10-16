@@ -1,0 +1,41 @@
+@startuml PES17-ClassesLocadora
+' PES17 - Diagrama de Classes: Locadora de Veículos
+' Aula 17: Projeto Parcial — Modelagem UML + Implementação OO
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES17-ClassesLocadora.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+abstract class Veiculo {
+  - placa : String
+  - modelo : String
+  - valorDiaria : double
+  + getPlaca() : String
+  + getModelo() : String
+  + getValorDiaria() : double
+  + {abstract} calcularLocacao(dias) : double
+}
+
+class Carro {
+  - numPortas : int
+  + calcularLocacao(dias) : double
+}
+
+class Moto {
+  - cilindradas : int
+  + calcularLocacao(dias) : double
+}
+
+class Locacao {
+  - veiculo : Veiculo
+  - cliente : String
+  - dias : int
+  - valorTotal : double
+  + getValorTotal() : double
+}
+
+Veiculo <|-- Carro
+Veiculo <|-- Moto
+Locacao --> Veiculo
+@enduml

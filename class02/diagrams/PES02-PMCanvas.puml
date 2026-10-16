@@ -1,0 +1,36 @@
+@startuml PES02-PMCanvas
+' PES02 - PMCanvas: o Projeto em Uma Página
+' Aula 02: Fundamentos de Gerenciamento de Projetos
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES02-PMCanvas.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "PMCanvas — o Projeto em Uma Página" as PMCanvas {
+  rectangle "JUSTIFICATIVA\npor que fazer" as J #2563EB;text:white
+  rectangle "OBJETIVO\no que alcançar" as O #EA580C;text:white
+  rectangle "PRODUTO\no que entregar" as P #059669;text:white
+  rectangle "STAKEHOLDERS\nquem se afeta" as S #7C3AED;text:white
+  rectangle "EQUIPE\nquem faz" as E #0891B2;text:white
+  rectangle "PREMISSAS\no que se presume" as PR #D97706;text:white
+  rectangle "RESTRIÇÕES\nlimites dados" as R #EA580C;text:white
+  rectangle "RISCOS\no que pode falhar" as RI #2563EB;text:white
+  rectangle "PRAZO\nquando entregar" as PZ #7C3AED;text:white
+  rectangle "CUSTO\nquanto custa" as C #059669;text:white
+}
+
+J -- O
+O -- P
+P -- S
+S -- E
+E -- PR
+PR -- R
+R -- RI
+RI -- PZ
+PZ -- C
+@enduml

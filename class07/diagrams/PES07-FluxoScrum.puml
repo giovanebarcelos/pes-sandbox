@@ -1,0 +1,32 @@
+@startuml PES07-FluxoScrum
+' PES07 - Fluxo do Framework Scrum
+' Aula 07: Metodologias Ágeis — Scrum e XP
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES07-FluxoScrum.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "Product Backlog" as A #2563EB;text:white
+rectangle "Sprint Planning" as B #EA580C;text:white
+rectangle "Sprint Backlog" as C #7C3AED;text:white
+rectangle "Sprint (1-4 semanas)" as D #059669;text:white
+rectangle "Daily Scrum (15 min)" as D1
+rectangle "Incremento Potencialmente Entregável" as E #D97706;text:white
+rectangle "Sprint Review" as F #2563EB;text:white
+rectangle "Sprint Retrospective" as G #7C3AED;text:white
+
+A --> B
+B --> C
+C --> D
+D -right-> D1
+D1 --> D
+D --> E
+E --> F
+F --> G
+G --> B
+@enduml

@@ -1,0 +1,32 @@
+@startuml PES14-CasosUsoBiblioteca
+' PES14 - Diagrama de Casos de Uso: Sistema de Biblioteca
+' Aula 14: Diagrama de Casos de Uso
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES14-CasosUsoBiblioteca.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam ArrowColor #334155
+left to right direction
+
+actor "Leitor" as ATOR1 #059669
+actor "Bibliotecário" as ATOR2 #7C3AED
+
+rectangle "Sistema de Biblioteca" as Sistema #F0F4F8;line:2563EB {
+  usecase "UC01: Pesquisar livros" as UC1
+  usecase "UC02: Realizar empréstimo" as UC2
+  usecase "UC03: Devolver livro" as UC3
+  usecase "UC04: Cadastrar livro" as UC4
+  usecase "UC05: Gerar relatório" as UC5
+}
+
+ATOR1 -- UC1
+ATOR1 -- UC2
+ATOR1 -- UC3
+UC2 -- ATOR2
+UC3 -- ATOR2
+UC4 -- ATOR2
+UC5 -- ATOR2
+
+UC2 ..> UC1 : <<include>>
+UC3 ..> UC2 : <<include>>
+@enduml

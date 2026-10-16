@@ -1,0 +1,25 @@
+@startuml PES09-ProcessoRequisitos
+' PES09 - Processo de Engenharia de Requisitos
+' Aula 09: Introdução à Engenharia de Requisitos
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES09-ProcessoRequisitos.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "Elicitação" as A #2563EB;text:white
+rectangle "Análise e Negociação" as B #EA580C;text:white
+rectangle "Especificação / Documentação" as C #7C3AED;text:white
+rectangle "Validação" as D #059669;text:white
+rectangle "Gestão de Requisitos" as E #D97706;text:white
+
+A --> B
+B --> C
+C --> D
+D --> E
+E --> A
+@enduml

@@ -1,0 +1,32 @@
+@startuml PES22-Microservicos
+' PES22 - Arquitetura de Microserviços
+' Aula 22: Microsserviços e Arquiteturas Distribuídas
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES22-Microservicos.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam defaultTextAlignment center
+skinparam ArrowColor #334155
+skinparam rectangle {
+  RoundCorner 12
+}
+
+rectangle "API Gateway" as GW #EA580C;text:white
+component "Serviço de Vendas" as MS1 #2563EB;text:white
+component "Serviço de Estoque" as MS2 #059669;text:white
+component "Serviço de Pagamento" as MS3 #7C3AED;text:white
+component "Serviço de Notificação" as MS4 #D97706;text:white
+database "DB Vendas" as DB1
+database "DB Estoque" as DB2
+database "DB Pagamento" as DB3
+
+GW --> MS1
+GW --> MS2
+GW --> MS3
+GW --> MS4
+MS1 --> DB1
+MS2 --> DB2
+MS3 --> DB3
+MS1 ..> MS4 : mensageria
+MS3 ..> MS4 : mensageria
+@enduml
