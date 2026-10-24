@@ -14,7 +14,7 @@
 | **Tipo de envio** | Arquivo (`.pdf` da capa e `.zip` do repositório) e link (GitHub) |  
 | **Tentativas** | 1 envio por grupo (reenvio só antes do prazo) |  
 | **Prazo** | Antes da Aula 28 (definir a data no Hub) |  
-| **Anexos do professor** | `A3_Projeto_PES` (enunciado), `A3_Exemplo_ReservaLab` (exemplo de referência) e **dois zips** de repositório de referência: `repository/class27/a3-reservalab/` (**Python**) e `repository/class27/a3-reservalab-java/` (**Java**) |  
+| **Anexos do professor** | `A3_Projeto_PES` (enunciado), `A3_Exemplo_ReservaLab` (exemplo de referência) e **dois zips** de repositório de referência: [`a3-reservalab-python.zip`](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/main/class27/a3/a3-reservalab-python.zip) (**Python**) e [`a3-reservalab-java.zip`](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/main/class27/a3/a3-reservalab-java.zip) (**Java**) |  
 
 > Ajuste ao que o Anima Hub oferecer para a sua turma (nomes de campos, tentativas, grupos). Este roteiro foi escrito sem acesso à configuração da atividade no portal.  
 
@@ -41,8 +41,8 @@ Em grupo, vocês vão escolher um problema com regras de negócio de verdade e c
 **Material de apoio (em anexo):**  
 - Enunciado completo, com rubrica detalhada e checklist  
 - Exemplo completo de referência: ReservaLab (use como guia, não copie)  
-- Repositório de referência em **Python** (`a3-reservalab`): código, testes, documentação e `docker-compose.yml`  
-- Repositório de referência em **Java** (`a3-reservalab-java`): Maven, JUnit 5 e `docker-compose.yml`  
+- Repositório de referência em **Python** ([`a3-reservalab`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab)): código, testes, documentação e `docker-compose.yml`  
+- Repositório de referência em **Java** ([`a3-reservalab-java`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab-java)): Maven, JUnit 5 e `docker-compose.yml`  
 
 ---  
 

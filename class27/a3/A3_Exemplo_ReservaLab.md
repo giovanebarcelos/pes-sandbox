@@ -2,7 +2,7 @@
 
 > **Documento de referência** — Este projeto é um exemplo completo de A3 para a disciplina de Projeto e Engenharia de Software. Ele mostra o nível de profundidade e os artefatos esperados em cada critério da rubrica. Use-o como guia, **não como modelo a ser copiado**: o seu projeto deve refletir o problema e as decisões do seu grupo.  
 >  
-> **O que é real e o que é ilustrativo.** O código, os testes, os diagramas, os números de desempenho e o histórico do `git log` abaixo foram **produzidos e executados de verdade** (repositório completo em `repository/class27/a3-reservalab/`). O grupo, as entrevistas e os registros de uso de IA são **fictícios** e servem para mostrar o formato esperado. O exemplo foi elaborado pelo professor com apoio de IA (Claude Code); no seu projeto, a seção **Uso de IA** deve contar o que realmente aconteceu.  
+> **O que é real e o que é ilustrativo.** O código, os testes, os diagramas, os números de desempenho e o histórico do `git log` abaixo foram **produzidos e executados de verdade** (repositório completo em [`a3-reservalab`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab)). O grupo, as entrevistas e os registros de uso de IA são **fictícios** e servem para mostrar o formato esperado. O exemplo foi elaborado pelo professor com apoio de IA (Claude Code); no seu projeto, a seção **Uso de IA** deve contar o que realmente aconteceu.  
 
 ---  
 
@@ -15,7 +15,7 @@
 | **Período** | 2026/2 |  
 | **Tema** | Sistema de reservas com regras por tipo de recurso |  
 | **Linguagem e stack** | Python 3.12 · pytest · SQLite · Docker Compose · Mermaid |  
-| **Repositório** | `github.com/<grupo>/reservalab` (tag `v1.0.0`) — exemplo local em `repository/class27/a3-reservalab/` |  
+| **Repositório** | `github.com/<grupo>/reservalab` (tag `v1.0.0`) — exemplo em [`a3-reservalab`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab) |  
 | **Processo** | Kanban com limite de WIP (Aula 8) |  
 | **Arquitetura** | Camadas com portas — hexagonal leve (Aulas 19-20) |  
 
@@ -218,6 +218,7 @@ Os diagramas ficam versionados em `docs/diagramas/*.mmd` e **refletem o código 
 
 ```mermaid  
 
+
 flowchart LR
     Aluno(["👤 Aluno"]) -->|é-um| Usuario(["👤 Usuário"])
     Professor(["👤 Professor"]) -->|é-um| Usuario
@@ -258,6 +259,7 @@ flowchart LR
 ### 4.2 Diagrama de classes  
 
 ```mermaid  
+
 
 classDiagram
     class Recurso {
@@ -357,6 +359,7 @@ classDiagram
 
 ```mermaid  
 
+
 sequenceDiagram
     actor U as Usuário
     participant S as ServicoReservas
@@ -393,6 +396,7 @@ sequenceDiagram
 
 ```mermaid  
 
+
 flowchart TD
     A([Usuário pede o cancelamento]) --> B{Reserva existe?}
     B -- não --> X1([Erro: NaoEncontrado])
@@ -419,6 +423,7 @@ flowchart TD
 
 ```mermaid  
 
+
 flowchart TD
     Aluno["👤 Aluno<br/>reserva salas de estudo"] --> Sistema
     Professor["👤 Professor<br/>reserva laboratórios e auditório"] --> Sistema
@@ -437,6 +442,7 @@ flowchart TD
 ### 5.2 Containers (C4 nível 2 — bônus)  
 
 ```mermaid  
+
 
 flowchart LR
     U["👤 Usuário"] --> CLI["Interface CLI<br/>cli.py"]
@@ -1003,7 +1009,8 @@ Reserva de salas, laboratórios e auditório do campus — Python 3.12, pytest, 
 ## Apêndice A — Como reproduzir  
 
 ```bash  
-cd repository/class27/a3-reservalab  
+git clone https://github.com/giovanebarcelos/pes-sandbox.git  
+cd pes-sandbox/class27/a3-reservalab  
 
 # com Docker (forma oficial de entrega)  
 docker compose up --build  
@@ -1016,9 +1023,14 @@ pytest                                         # 74 testes
 PYTHONPATH=src python -m reservalab.cli demo   # a demonstração da seção 6.5  
 ```  
 
-### Versão em Java
+### Versão em Java  
 
-O mesmo sistema existe em Java 21 (Maven, JUnit 5, SQLite via JDBC) em `repository/class27/a3-reservalab-java/`, com as mesmas regras, as mesmas camadas e os mesmos casos de teste. Também sobe com `docker compose up --build` e roda os testes com `docker compose run --rm testes` (74 testes passando, 33 por repositório). Serve de referência para grupos que escolherem Java; a documentação (`docs/`) é a mesma e está na pasta do exemplo Python.  
+O mesmo sistema existe em Java 21 (Maven, JUnit 5, SQLite via JDBC) em [`a3-reservalab-java`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab-java), com as mesmas regras, as mesmas camadas e os mesmos casos de teste. Também sobe com `docker compose up --build` e roda os testes com `docker compose run --rm testes` (74 testes passando, 33 por repositório). Serve de referência para grupos que escolherem Java; a documentação (`docs/`) é a mesma e está na pasta do exemplo Python.  
+
+🔗 [Repositório de referência — Python (a3-reservalab)](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab)  
+🔗 [Repositório de referência — Java (a3-reservalab-java)](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab-java)  
+🔗 [Zip — Python, com histórico Git e tag v1.0.0](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/main/class27/a3/a3-reservalab-python.zip)  
+🔗 [Zip — Java](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/main/class27/a3/a3-reservalab-java.zip)  
 
 ## Apêndice B — Checklist de entrega (Aula 27, Slide 30)  
 

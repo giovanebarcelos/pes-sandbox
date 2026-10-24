@@ -138,12 +138,17 @@ A A3 é entregue como um **projeto integrado**, composto pelos seis conjuntos de
 
 #### Rota Java: exemplo de referência  
 
-Quem escolher Java tem um exemplo **executado e testado**: o mesmo ReservaLab, em `repository/class27/a3-reservalab-java/`, com **Java 21, Maven, JUnit 5 e SQLite (JDBC)**. Mesmas regras, mesmas camadas e os mesmos 74 casos de teste da versão Python. Use-o como guia de **estrutura e de Docker**, não como código para copiar.  
+Quem escolher Java tem um exemplo **executado e testado**: o mesmo ReservaLab, em [`a3-reservalab-java`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab-java), com **Java 21, Maven, JUnit 5 e SQLite (JDBC)**. Mesmas regras, mesmas camadas e os mesmos 74 casos de teste da versão Python. Use-o como guia de **estrutura e de Docker**, não como código para copiar.  
 
 ```bash  
 docker compose up --build          # demonstração  
 docker compose run --rm testes     # 74 testes (mvn test dentro do contêiner)  
 ```  
+
+🔗 [Repositório de referência — Python (a3-reservalab)](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab)  
+🔗 [Repositório de referência — Java (a3-reservalab-java)](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab-java)  
+🔗 [Zip — Python, com histórico Git e tag v1.0.0](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/main/class27/a3/a3-reservalab-python.zip)  
+🔗 [Zip — Java](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/main/class27/a3/a3-reservalab-java.zip)  
 
 | Ponto | Python | Java |  
 |---|---|---|  
@@ -396,7 +401,7 @@ meu-projeto/
 └── tests/                 # testes automatizados  
 ```  
 
-A estrutura é uma sugestão; adaptem à linguagem. Em Java, `src/` vira o layout do Maven (`src/main/java` e `src/test/java`) e a raiz ganha o `pom.xml`. O repositório de referência (`repository/class27/a3-reservalab/`) segue exatamente esta organização.  
+A estrutura é uma sugestão; adaptem à linguagem. Em Java, `src/` vira o layout do Maven (`src/main/java` e `src/test/java`) e a raiz ganha o `pom.xml`. O repositório de referência ([`a3-reservalab`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab)) segue exatamente esta organização.  
 
 ---  
 
@@ -412,10 +417,10 @@ Não. A interface (linha de comando, API ou web) não é avaliada. Avalia-se a l
 Não é obrigatório. Persistir em arquivo ou SQLite é bem-vindo se ajudar a mostrar a separação por camadas (o exemplo de referência troca memória por SQLite sem mexer no domínio). Se usarem PostgreSQL ou similar, ele entra como **serviço no `docker-compose.yml`**.  
 
 **Python ou Java?**  
-Os dois valem. Mantenham uma linguagem só no projeto. Em Java, use uma imagem Maven ou Temurin (ex.: `maven:3.9-eclipse-temurin-21`) e o mesmo contrato do compose: `up` roda o sistema e o serviço `testes` roda `mvn test`. Há um exemplo Java **testado** em `repository/class27/a3-reservalab-java/` (o mesmo ReservaLab, com Maven e JUnit 5).  
+Os dois valem. Mantenham uma linguagem só no projeto. Em Java, use uma imagem Maven ou Temurin (ex.: `maven:3.9-eclipse-temurin-21`) e o mesmo contrato do compose: `up` roda o sistema e o serviço `testes` roda `mvn test`. Há um exemplo Java **testado** em [`a3-reservalab-java`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab-java) (o mesmo ReservaLab, com Maven e JUnit 5).  
 
 **Preciso saber Docker a fundo?**  
-Não. Um `Dockerfile` de poucas linhas e um compose com 1 ou 2 serviços bastam; os repositórios de referência (`a3-reservalab` em Python e `a3-reservalab-java`) têm um `Dockerfile` e um compose que funcionam e podem servir de base. O que se avalia é que **outra pessoa rode o projeto sem configurar nada**.  
+Não. Um `Dockerfile` de poucas linhas e um compose com 1 ou 2 serviços bastam; os repositórios de referência ([`a3-reservalab`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab) em Python e [`a3-reservalab-java`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab-java)) têm um `Dockerfile` e um compose que funcionam e podem servir de base. O que se avalia é que **outra pessoa rode o projeto sem configurar nada**.  
 
 **Posso usar um modelo de IA diferente do da Aula 09B?**  
 Pode, desde que declarado no README (ferramenta, modelo e versão) e respeitadas as regras de dados e de chave de API. O mapa de uso por etapa vale para qualquer agente.  
