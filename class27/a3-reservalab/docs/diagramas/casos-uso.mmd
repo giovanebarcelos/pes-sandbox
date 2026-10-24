@@ -1,0 +1,24 @@
+flowchart LR
+    Aluno(["👤 Aluno"]) -->|é-um| Usuario(["👤 Usuário"])
+    Professor(["👤 Professor"]) -->|é-um| Usuario
+    Coordenador(["👤 Coordenador"]) -->|é-um| Usuario
+    subgraph ReservaLab ["Sistema ReservaLab"]
+        UC01["UC01 Consultar horários livres"]
+        UC02["UC02 Solicitar reserva"]
+        UC03["UC03 Cancelar reserva"]
+        UC04["UC04 Listar minhas reservas"]
+        UC05["UC05 Aprovar ou rejeitar reserva"]
+        UC06["UC06 Registrar recurso"]
+        UC07["Verificar conflito de horário"]
+        UC08["Aplicar regras do tipo de recurso"]
+        UC09["Registrar cancelamento tardio"]
+    end
+    Usuario --> UC01
+    Usuario --> UC02
+    Usuario --> UC03
+    Usuario --> UC04
+    Coordenador --> UC05
+    Coordenador --> UC06
+    UC02 -.->|«include»| UC07
+    UC02 -.->|«include»| UC08
+    UC09 -.->|«extend»| UC03

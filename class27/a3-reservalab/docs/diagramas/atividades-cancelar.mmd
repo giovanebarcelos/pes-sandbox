@@ -1,0 +1,16 @@
+flowchart TD
+    A([Usuário pede o cancelamento]) --> B{Reserva existe?}
+    B -- não --> X1([Erro: NaoEncontrado])
+    B -- sim --> C{É o dono<br/>ou coordenador?}
+    C -- não --> X2([Erro: NaoAutorizado])
+    C -- sim --> D{Status é<br/>PENDENTE ou CONFIRMADA?}
+    D -- não --> X3([Erro: TransicaoInvalida])
+    D -- sim --> E{Já começou?}
+    E -- sim --> X4([Erro: RegraViolada])
+    E -- não --> F{Faltam menos<br/>de 2h para o início?}
+    F -- sim --> G[Marca cancelamento_tardio]
+    F -- não --> H[Cancelamento normal]
+    G --> I[Status = CANCELADA<br/>registra cancelada_em]
+    H --> I
+    I --> J[Salva no repositório<br/>horário volta a ficar livre]
+    J --> K([Fim])

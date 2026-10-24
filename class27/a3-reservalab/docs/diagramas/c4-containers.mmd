@@ -1,0 +1,6 @@
+flowchart LR
+    U["👤 Usuário"] --> CLI["Interface CLI<br/>cli.py"]
+    CLI --> APP["Aplicação<br/>ServicoReservas + CatalogoRecursos"]
+    APP --> DOM["Domínio<br/>Recurso, Reserva, Usuario"]
+    APP -->|"porta RepositorioReservas"| DB[("SQLite<br/>reservalab.db")]
+    APP -.->|"mesma porta, testes"| MEM[("Memória")]

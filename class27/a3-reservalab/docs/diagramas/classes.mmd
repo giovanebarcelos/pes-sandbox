@@ -1,0 +1,85 @@
+classDiagram
+    class Recurso {
+        <<abstract>>
+        +str id
+        +str nome
+        +int capacidade
+        +timedelta duracao_maxima
+        +timedelta antecedencia_minima
+        +bool exige_aprovacao
+        +validar(usuario, inicio, fim, agora) None
+    }
+    class SalaEstudo
+    class Laboratorio
+    class Auditorio
+    Recurso <|-- SalaEstudo
+    Recurso <|-- Laboratorio
+    Recurso <|-- Auditorio
+
+    class Perfil {
+        <<enumeration>>
+        ALUNO
+        PROFESSOR
+        COORDENADOR
+    }
+    class Usuario {
+        +str matricula
+        +str nome
+        +Perfil perfil
+    }
+    Usuario --> Perfil
+
+    class Status {
+        <<enumeration>>
+        PENDENTE
+        CONFIRMADA
+        REJEITADA
+        CANCELADA
+    }
+    class Reserva {
+        +int id
+        +str recurso_id
+        +str matricula
+        +datetime inicio
+        +datetime fim
+        +Status status
+        +datetime cancelada_em
+        +bool cancelamento_tardio
+        +conflita_com(inicio, fim) bool
+        +confirmar() None
+        +rejeitar() None
+        +cancelar(agora) None
+    }
+    Reserva --> Status
+
+    class RepositorioReservas {
+        <<interface>>
+        +adicionar_sem_conflito(reserva) Reserva
+        +obter(reserva_id) Reserva
+        +salvar(reserva) None
+        +ativas_do_recurso(recurso_id, inicio, fim) list
+        +do_usuario(matricula) list
+    }
+    class RepositorioMemoria
+    class RepositorioSqlite
+    RepositorioReservas <|.. RepositorioMemoria
+    RepositorioReservas <|.. RepositorioSqlite
+
+    class CatalogoRecursos {
+        +registrar(recurso) None
+        +obter(recurso_id) Recurso
+        +listar() list
+    }
+    CatalogoRecursos o-- "0..*" Recurso
+
+    class ServicoReservas {
+        +solicitar(usuario, recurso_id, inicio, fim) Reserva
+        +cancelar(usuario, reserva_id) Reserva
+        +decidir(coordenador, reserva_id, aprovar) Reserva
+        +horarios_livres(recurso_id, dia) list
+        +minhas_reservas(usuario) list
+    }
+    ServicoReservas --> RepositorioReservas
+    ServicoReservas --> CatalogoRecursos
+    ServicoReservas ..> Reserva : cria
+    ServicoReservas ..> Usuario

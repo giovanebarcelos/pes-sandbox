@@ -1,0 +1,13 @@
+flowchart TD
+    Aluno["👤 Aluno<br/>reserva salas de estudo"] --> Sistema
+    Professor["👤 Professor<br/>reserva laboratórios e auditório"] --> Sistema
+    Coordenador["👤 Coordenador<br/>aprova reservas e administra recursos"] --> Sistema
+    Sistema["📦 ReservaLab<br/>(software a ser construído)"]
+    Sistema -.->|"fora do MVP"| Email["📧 E-mail institucional<br/>(sistema externo)"]
+    Sistema -.->|"fora do MVP"| SIA["🎓 Sistema Acadêmico<br/>(sistema externo)"]
+    style Sistema fill:#2563EB,color:#FFF
+    style Aluno fill:#059669,color:#FFF
+    style Professor fill:#7C3AED,color:#FFF
+    style Coordenador fill:#D97706,color:#FFF
+    style Email fill:#9CA3AF,color:#FFF
+    style SIA fill:#9CA3AF,color:#FFF

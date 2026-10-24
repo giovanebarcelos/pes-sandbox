@@ -1,0 +1,30 @@
+sequenceDiagram
+    actor U as Usuário
+    participant S as ServicoReservas
+    participant C as CatalogoRecursos
+    participant R as Recurso
+    participant P as RepositorioReservas
+
+    U->>S: solicitar(usuario, "S101", inicio, fim)
+    S->>C: obter("S101")
+    C-->>S: SalaEstudo
+    S->>P: do_usuario(matricula)
+    P-->>S: reservas anteriores
+    alt 3 ou mais cancelamentos tardios em 30 dias
+        S-->>U: UsuarioBloqueado
+    else usuário liberado
+        S->>R: validar(usuario, inicio, fim, agora)
+        alt regra violada (perfil, duração, antecedência)
+            R-->>S: RegraViolada
+            S-->>U: RegraViolada
+        else pedido válido
+            S->>P: adicionar_sem_conflito(reserva)
+            alt já existe reserva ativa no intervalo
+                P-->>S: ConflitoDeHorario
+                S-->>U: ConflitoDeHorario
+            else horário livre
+                P-->>S: reserva com id
+                S-->>U: reserva (CONFIRMADA ou PENDENTE)
+            end
+        end
+    end

@@ -1,0 +1,12 @@
+# docker compose up                      -> roda a demonstração
+# docker compose run --rm testes         -> roda a suíte de testes
+services:
+  demo:
+    build: .
+    image: reservalab:1.0.0
+
+  testes:
+    build: .
+    image: reservalab:1.0.0
+    command: pytest -q
+    profiles: ["testes"]
