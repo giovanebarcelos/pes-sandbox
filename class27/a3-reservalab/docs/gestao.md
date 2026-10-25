@@ -33,7 +33,7 @@ Probabilidade (P) e impacto (I) de 1 a 5; exposição = P × I.
 |---|---|---|---|---|---|---|
 | R1 | Regras de negócio mudarem depois de implementadas (coordenação muda o limite de horas) | 3 | 4 | 12 | **Mitigar:** regras em atributos de classe (`duracao_maxima`...), cobertas por teste de valor-limite | Pedido de mudança após a validação |
 | R2 | Duas reservas no mesmo horário por condição de corrida | 2 | 5 | 10 | **Mitigar:** operação atômica na porta (ADR-002) + teste com 20 threads | Teste de concorrência vermelho |
-| R3 | Limite diário do modelo gratuito do agente (≈ 50 req/dia, Aula 09B) travar a semana final | 4 | 3 | 12 | **Mitigar:** usar `caveman`, pedidos pequenos, não deixar IA para a última semana | 2 dias seguidos com cota estourada |
+| R3 | Limite diário do modelo gratuito do agente (≈ 50 req/dia, Aula 01B) travar a semana final | 4 | 3 | 12 | **Mitigar:** usar `caveman`, pedidos pequenos, não deixar IA para a última semana | 2 dias seguidos com cota estourada |
 | R4 | Integrante com pouca disponibilidade na reta final | 3 | 3 | 9 | **Mitigar:** programação em par nas partes críticas; todos revisam PR | Item parado > 5 dias em "Fazendo" |
 | R5 | Documento dizer algo que o código não faz (documentação gerada por IA e não conferida) | 3 | 4 | 12 | **Evitar:** matriz de rastreabilidade conferida por script; revisão humana de todo texto gerado | Teste citado na matriz que não existe |
 

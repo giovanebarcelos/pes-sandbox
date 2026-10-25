@@ -54,7 +54,7 @@ Branch por tarefa (`feat/...`, `fix/...`), Conventional Commits, pull request co
 
 ## Uso de IA
 
-> Seção de **exemplo** — a de vocês deve relatar o que realmente aconteceu. Política: Aula 09B, Slide 32.
+> Seção de **exemplo** — a de vocês deve relatar o que realmente aconteceu. Política: Aula 01B, Slide 32.
 
 **Ferramenta e modelo:** OpenCode + Nemotron 3 Ultra (`:free`) via OpenRouter. **Skills:** `grilling`, `to-spec`, `tdd`, `grill-with-docs`, `caveman-commit`, `retro`. Configuração em `opencode.json`; memória do agente em `AGENTS.md`.
 

@@ -24,13 +24,13 @@
 
 **A3 — Projeto Integrador (40 pontos)**  
 
-Em grupo, vocês vão escolher um problema com regras de negócio de verdade e construir, do início ao fim, um sistema de software: requisitos, modelagem UML, arquitetura, código com testes, documentação e versionamento no GitHub. O trabalho é feito **com o agente de IA da disciplina** (Aula 09B), e o uso é **declarado** e **defendido oralmente** na Aula 28.  
+Em grupo, vocês vão escolher um problema com regras de negócio de verdade e construir, do início ao fim, um sistema de software: requisitos, modelagem UML, arquitetura, código com testes, documentação e versionamento no GitHub. O trabalho é feito **com o agente de IA da disciplina** (Aula 01B), e o uso é **declarado** e **defendido oralmente** na Aula 28.  
 
 **O tema é livre**, desde que tenha pelo menos 3 regras de negócio com valores-limite testáveis (só cadastrar e listar não basta). Mostrem o tema ao professor antes de se comprometerem.  
 
 **Critérios (40 pts):** Requisitos 10 · Modelagem UML 10 · Arquitetura 5 · Código 5 · Documentação 5 (inclui o registro de uso de IA) · Versionamento e colaboração 5.  
 
-**Uso do agente de IA (obrigatório):** configurem o OpenCode conforme a Aula 09B, usem as skills nas etapas indicadas no enunciado e registrem no README, em uma tabela, o que pediram, **o que o agente errou** e o que o grupo corrigiu (mínimo 5 registros e 2 erros reais). Artefato que o grupo não sabe explicar é avaliado como Insuficiente, com ou sem IA.  
+**Uso do agente de IA (obrigatório):** configurem o OpenCode conforme a Aula 01B, usem as skills nas etapas indicadas no enunciado e registrem no README, em uma tabela, o que pediram, **o que o agente errou** e o que o grupo corrigiu (mínimo 5 registros e 2 erros reais). Artefato que o grupo não sabe explicar é avaliado como Insuficiente, com ou sem IA.  
 
 **Linguagem:** **Python ou Java** (uma só por projeto). Há um exemplo de referência em cada uma, com as mesmas regras e os mesmos 74 testes.  
 

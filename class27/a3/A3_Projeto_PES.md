@@ -184,7 +184,7 @@ docker compose run --rm testes     # 74 testes (mvn test dentro do contêiner)
 
 Se o sistema expõe uma API HTTP, inclua também o `openapi.yaml`.  
 
-> **No material:** Aula 27 (documentação técnica, README, C4, OpenAPI, ADR e SDR), Aula 09B (política de IA).  
+> **No material:** Aula 27 (documentação técnica, README, C4, OpenAPI, ADR e SDR), Aula 01B (política de IA).  
 
 ### 6. Versionamento e colaboração  
 
@@ -205,7 +205,7 @@ A A3 **exige** o uso do agente de IA da disciplina e a **declaração** do que f
 
 ### O que usar  
 
-O setup é o da **Aula 09B** (IA Assistida: Skills, OpenCode e OpenRouter): OpenCode aberto **na raiz do repositório do projeto**, modelo gratuito via OpenRouter, skills em `.agents/skills/`, `opencode.json` com `push` negado e `ask` para comandos (Slide 31) e `AGENTS.md` mantido atualizado (Slide 33). Quem usa o Claude Code segue o Slide 29. A política completa é o **Slide 32 da Aula 09B**.  
+O setup é o da **Aula 01B** (IA Assistida: Skills, OpenCode e OpenRouter): OpenCode aberto **na raiz do repositório do projeto**, modelo gratuito via OpenRouter, skills em `.agents/skills/`, `opencode.json` com `push` negado e `ask` para comandos (Slide 31) e `AGENTS.md` mantido atualizado (Slide 33). Quem usa o Claude Code segue o Slide 29. A política completa é o **Slide 32 da Aula 01B**.  
 
 ### Onde o agente entra: mapa por etapa  
 
@@ -213,7 +213,7 @@ Cada aula de 09 a 28 tem um slide **🤖 Com o Agente** que mostra como usá-lo 
 
 | Etapa da A3 | Use o agente para | Material |  
 |---|---|---|  
-| Requisitos | Entrevista com `grilling` e síntese com `to-spec`; treino de elicitação com stakeholder simulado; classificar RF/RNF e desafiar a priorização; DRS e matriz de rastreabilidade | Aula 09B (Slides 20-21, 25-27), Aula 10 (Slide 34), Aula 11 (Slide 32), Aula 12 (Slide 32) |  
+| Requisitos | Entrevista com `grilling` e síntese com `to-spec`; treino de elicitação com stakeholder simulado; classificar RF/RNF e desafiar a priorização; DRS e matriz de rastreabilidade | Aula 01B (Slides 20-21, 25-27), Aula 10 (Slide 34), Aula 11 (Slide 32), Aula 12 (Slide 32) |  
 | Modelagem | Gerar casos de uso, classes, sequência e atividades; **comparar diagrama com código** (agente `plan`) | Aulas 14, 15, 16 (Slide 32 de cada), Aula 17 (Slide 32) |  
 | Implementação | Quebrar em tickets (`to-tickets`), desenvolver com `tdd`, retrospectiva (`retro`) | Aula 17 (Slide 32) |  
 | Arquitetura | Questionar a decisão (`grill-with-docs`) e rascunhar ADR; verificar a regra de dependência; decidir a implantação | Aula 18 (Slide 39), Aula 20 (Slide 40), Aula 22 (Slide 43) |  
@@ -223,7 +223,7 @@ Cada aula de 09 a 28 tem um slide **🤖 Com o Agente** que mostra como usá-lo 
 
 ### Regras do jogo  
 
-1. **Primeiro à mão, depois o agente** nas atividades de aula (Slide 32 da Aula 09B). **Na A3 o agente é parte do método**, mas a decisão e o entendimento são seus  
+1. **Primeiro à mão, depois o agente** nas atividades de aula (Slide 32 da Aula 01B). **Na A3 o agente é parte do método**, mas a decisão e o entendimento são seus  
 2. **Revise tudo o que o agente produz** como se fosse um pull request. Documentação de IA não revisada é pior que nenhuma (Aula 27, Slide 20)  
 3. **Dados:** nada de dados pessoais reais, credenciais ou dados de clientes nos prompts  
 4. **Chave de API fora do Git.** Ela fica em `~/.local/share/opencode/auth.json`, nunca no repositório  
@@ -248,7 +248,7 @@ O README tem uma seção **Uso de IA** com:
 
 ### Defesa oral  
 
-Na apresentação, o professor escolhe um trecho de qualquer artefato (código, diagrama, requisito, ADR) e pede ao grupo que o explique. **Artefato que o grupo não sabe explicar é avaliado como Insuficiente naquele critério — feito com ou sem IA** (Aula 09B, Slide 32; Aula 27, Slide 24). Usar IA e não declarar, sabendo explicar tudo, não reduz a nota do critério; não saber explicar, sim.  
+Na apresentação, o professor escolhe um trecho de qualquer artefato (código, diagrama, requisito, ADR) e pede ao grupo que o explique. **Artefato que o grupo não sabe explicar é avaliado como Insuficiente naquele critério — feito com ou sem IA** (Aula 01B, Slide 32; Aula 27, Slide 24). Usar IA e não declarar, sabendo explicar tudo, não reduz a nota do critério; não saber explicar, sim.  
 
 ---  
 
@@ -422,7 +422,7 @@ Os dois valem. Mantenham uma linguagem só no projeto. Em Java, use uma imagem M
 **Preciso saber Docker a fundo?**  
 Não. Um `Dockerfile` de poucas linhas e um compose com 1 ou 2 serviços bastam; os repositórios de referência ([`a3-reservalab`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab) em Python e [`a3-reservalab-java`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/class27/a3-reservalab-java)) têm um `Dockerfile` e um compose que funcionam e podem servir de base. O que se avalia é que **outra pessoa rode o projeto sem configurar nada**.  
 
-**Posso usar um modelo de IA diferente do da Aula 09B?**  
+**Posso usar um modelo de IA diferente do da Aula 01B?**  
 Pode, desde que declarado no README (ferramenta, modelo e versão) e respeitadas as regras de dados e de chave de API. O mapa de uso por etapa vale para qualquer agente.  
 
 **A IA escreveu a maior parte do código. Isso é um problema?**  
@@ -440,8 +440,8 @@ Não há mínimo. O exemplo de referência tem cerca de 390 linhas de código-fo
 
 | Categoria | Ferramenta | Acesso |  
 |---|---|---|  
-| Agente de IA | OpenCode + OpenRouter (modelo `:free`) | Gratuito (Aula 09B) |  
-| Agente alternativo | Claude Code | Conforme sua conta (Aula 09B, Slide 29) |  
+| Agente de IA | OpenCode + OpenRouter (modelo `:free`) | Gratuito (Aula 01B) |  
+| Agente alternativo | Claude Code | Conforme sua conta (Aula 01B, Slide 29) |  
 | Diagramas | Mermaid (mermaid.live), PlantUML | Gratuito |  
 | Contêineres | Docker e Docker Compose | Gratuito (Docker Engine, ou Docker Desktop conforme a licença) |  
 | Testes | pytest (Python), JUnit (Java) | Gratuito |  
@@ -460,4 +460,4 @@ Não há mínimo. O exemplo de referência tem cerca de 390 linhas de código-fo
 - BROWN, Simon. *The C4 model for visualising software architecture*. c4model.com.  
 - NYGARD, Michael. *Documenting Architecture Decisions*. 2011.  
 - Conventional Commits 1.0.0. conventionalcommits.org.  
-- Material da disciplina: Aulas 1-28, Aula 09B (IA assistida) e o exemplo de referência *ReservaLab*.  
+- Material da disciplina: Aulas 1-28, Aula 01B (IA assistida) e o exemplo de referência *ReservaLab*.  
