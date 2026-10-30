@@ -1,0 +1,33 @@
+@startuml PES16B-EstadosPedido
+' PES16B - Diagrama de Máquina de Estados: Ciclo de Vida do Pedido
+' Aula 16B: Diagrama de Máquina de Estados (UML)
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES16B-EstadosPedido.mmd (Mermaid).
+' Rótulo da transição: evento [guarda] / ação
+
+skinparam shadowing false
+skinparam ArrowColor #334155
+skinparam state {
+  BackgroundColor #FFFFFF
+  BorderColor #2563EB
+}
+hide empty description
+
+state Novo
+state Pago : entry / enviarEmailConfirmacao
+state Preparando
+state Enviado : entry / avisarClienteRastreio
+state Entregue #D1FAE5
+state Cancelado #FEE2E2 : entry / liberarEstoque
+
+[*] --> Novo : criarPedido
+Novo --> Pago : confirmarPagamento [valor confere] / reservarEstoque
+Novo --> Cancelado : cancelar
+Novo --> Cancelado : after(48h)
+Pago --> Preparando : iniciarSeparacao
+Pago --> Cancelado : cancelar / estornarPagamento
+Preparando --> Enviado : despachar / gerarRastreio
+Enviado --> Entregue : confirmarEntrega
+Entregue --> [*]
+Cancelado --> [*]
+@enduml

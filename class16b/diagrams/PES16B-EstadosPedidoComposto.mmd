@@ -1,0 +1,33 @@
+%% PES16B - Diagrama de Máquina de Estados: Pedido com Escolha, Estados Compostos e Regiões Concorrentes
+%% Aula 16B: Diagrama de Máquina de Estados (UML)
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+%% Versão PlantUML nativa: PES16B-EstadosPedidoComposto.puml (mesma pasta) — https://plantuml.com/
+stateDiagram-v2
+    [*] --> AguardandoPagamento
+    AguardandoPagamento --> analise : pagamentoRecebido
+    state analise <<choice>>
+    analise --> EmPreparo : [aprovado]
+    analise --> AguardandoPagamento : [recusado] / notificarCliente
+    state EmPreparo {
+        [*] --> Separando
+        Separando --> Embalado : itensSeparados
+        Embalado --> [*]
+        --
+        [*] --> EmitindoNF
+        EmitindoNF --> NFEmitida : notaAutorizada
+        NFEmitida --> [*]
+    }
+    EmPreparo --> EmTransporte
+    state EmTransporte {
+        [*] --> NoCentroDistribuicao
+        NoCentroDistribuicao --> SaiuParaEntrega : roteirizar
+        SaiuParaEntrega --> NoCentroDistribuicao : entregaFalhou [tentativas menor que 3]
+        SaiuParaEntrega --> [*] : entregaConfirmada
+    }
+    EmTransporte --> Entregue
+    EmTransporte --> Devolvido : extraviado / abrirSinistro
+    AguardandoPagamento --> Cancelado : cancelar
+    EmPreparo --> Cancelado : cancelar / estornarPagamento
+    Entregue --> [*]
+    Cancelado --> [*]
+    Devolvido --> [*]

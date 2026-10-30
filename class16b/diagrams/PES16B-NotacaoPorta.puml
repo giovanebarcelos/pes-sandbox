@@ -1,0 +1,27 @@
+@startuml PES16B-NotacaoPorta
+' PES16B - Diagrama de Máquina de Estados: Notação Básica (Porta com Fechadura)
+' Aula 16B: Diagrama de Máquina de Estados (UML)
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES16B-NotacaoPorta.mmd (Mermaid).
+' Mostra: estado inicial, estado final, evento [guarda] / ação, autotransição e entry/exit
+
+skinparam shadowing false
+skinparam ArrowColor #334155
+skinparam state {
+  BackgroundColor #FFFFFF
+  BorderColor #2563EB
+}
+hide empty description
+
+state Fechada
+state Aberta : entry / acenderLuz\nexit / apagarLuz
+state Trancada
+
+[*] --> Fechada
+Fechada --> Aberta : abrir
+Aberta --> Fechada : fechar
+Fechada --> Trancada : trancar(chave) [chave correta] / registrarLog
+Trancada --> Fechada : destrancar(chave) [chave correta]
+Trancada --> Trancada : destrancar(chave) [chave errada] / tentativas++
+Trancada --> [*] : demolir
+@enduml
