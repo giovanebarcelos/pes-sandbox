@@ -2,7 +2,7 @@
 Workspace da UA5 (Aulas 18-22) — Locadora de Veículos evoluindo de um código legado até microsserviços. Python 3.10+, **somente biblioteca padrão** (nada de pip), testes com `unittest`.
 
 ## Onde está cada coisa
-- Tutoriais passo a passo: tutoriais/Tutorial_Aula18..22_*.md
+- Tutoriais passo a passo: Aula_18..22_Tutorial_*.md (distribuídos com os slides; o aluno pode colá-los ou referenciá-los)
 - Cada aula: aulaXX/inicio (ponto de partida) · aulaXX/solucao (referência do professor) · aulaXX/meu (cópia de trabalho do aluno)
 - Decisões: aulaXX/solucao/docs/adr/ · Glossário: aula21/solucao/GLOSSARY.md
 

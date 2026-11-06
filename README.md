@@ -63,15 +63,15 @@ Cada diretório `classXX/` contém:
 
 ## Workspace da UA5 — Tutoriais das Aulas 18-22
 
-O diretório [`ua5-workspace/`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/ua5-workspace) reúne **um tutorial passo a passo por aula** da UA5, em que a Locadora de Veículos da Aula 17 evolui de um código legado até microsserviços. Cada aula tem `inicio/` (ponto de partida), `solucao/` (referência testada) e uma orientação **🤖 Com o Agente**. Roda **localmente só com Python 3.10+** (biblioteca padrão, sem `pip`); o `docker-compose.yml` é uma alternativa opcional.
+O diretório [`ua5-workspace/`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/ua5-workspace) é o ambiente de prática da UA5: cada aula tem **um tutorial passo a passo** (distribuído junto com os slides da aula, como `Aula_XX_Tutorial_*.md`/`.html`), em que a Locadora de Veículos da Aula 17 evolui de um código legado até microsserviços. Cada aula tem `inicio/` (ponto de partida), `solucao/` (referência testada) e uma orientação **🤖 Com o Agente**. Roda **localmente só com Python 3.10+** (biblioteca padrão, sem `pip`); o `docker-compose.yml` é uma alternativa opcional.
 
 | Aula | Tutorial |
 |---|---|
-| 18 | [SOLID, Design Patterns e ADR](https://github.com/giovanebarcelos/pes-sandbox/blob/main/ua5-workspace/tutoriais/Tutorial_Aula18_SOLID_Padroes.md) |
-| 19 | [MVC, MVP e MVVM](https://github.com/giovanebarcelos/pes-sandbox/blob/main/ua5-workspace/tutoriais/Tutorial_Aula19_MVC_MVP_MVVM.md) |
-| 20 | [Clean, Hexagonal e Onion](https://github.com/giovanebarcelos/pes-sandbox/blob/main/ua5-workspace/tutoriais/Tutorial_Aula20_Clean_Hexagonal_Onion.md) |
-| 21 | [DDD, CQRS e Event Sourcing](https://github.com/giovanebarcelos/pes-sandbox/blob/main/ua5-workspace/tutoriais/Tutorial_Aula21_DDD_CQRS_EventSourcing.md) |
-| 22 | [Microsserviços e Arquiteturas Distribuídas](https://github.com/giovanebarcelos/pes-sandbox/blob/main/ua5-workspace/tutoriais/Tutorial_Aula22_Microsservicos.md) |
+| 18 | SOLID, Design Patterns e ADR (`Aula_18_Tutorial_SOLID_Padroes.md`) |
+| 19 | MVC, MVP e MVVM (`Aula_19_Tutorial_MVC_MVP_MVVM.md`) |
+| 20 | Clean, Hexagonal e Onion (`Aula_20_Tutorial_Clean_Hexagonal_Onion.md`) |
+| 21 | DDD, CQRS e Event Sourcing (`Aula_21_Tutorial_DDD_CQRS_EventSourcing.md`) |
+| 22 | Microsserviços e Arquiteturas Distribuídas (`Aula_22_Tutorial_Microsservicos.md`) |
 
 ```bash
 cd ua5-workspace

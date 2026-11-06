@@ -2,7 +2,7 @@
 
 **Projeto e Engenharia de Software** · Prof. Giovane Barcelos · [💻 Códigos Fonte](https://github.com/giovanebarcelos/pes-sandbox/tree/main/ua5-workspace)  
 
-Um único sistema, a **Locadora de Veículos da Aula 17**, evolui ao longo das cinco aulas da UA5. Cada aula tem o seu tutorial passo a passo e a sua própria pasta. Quando uma aula usa o resultado da anterior, o tutorial diz de onde veio.  
+Um único sistema, a **Locadora de Veículos da Aula 17**, evolui ao longo das cinco aulas da UA5. Cada aula tem a sua própria pasta e o seu tutorial passo a passo, que é distribuído **junto com os slides da aula** (`Aula_XX_Tutorial_*.md` e `.html`). Quando uma aula usa o resultado da anterior, o tutorial diz de onde veio.  
 
 ```plantuml
 @startuml
@@ -25,11 +25,11 @@ a21 -left-> a22 : FrotaAPI vira HTTP
 
 | Aula | Tutorial | Parte de | Entrega |  
 |---|---|---|---|  
-| 18 | [Princípios SOLID, Design Patterns e ADR](tutoriais/Tutorial_Aula18_SOLID_Padroes.md) | `aula18/inicio` (código legado criado a partir da Aula 17) | Locadora refatorada + ADR-0001 |  
-| 19 | [MVC, MVP e MVVM](tutoriais/Tutorial_Aula19_MVC_MVP_MVVM.md) | `aula19/inicio` = solução da Aula 18 | 3 padrões de apresentação + web + ADR-0002 |  
-| 20 | [Clean, Hexagonal e Onion](tutoriais/Tutorial_Aula20_Clean_Hexagonal_Onion.md) | `aula20/inicio` = solução da Aula 19 | Hexágono + SQLite + teste de arquitetura + ADR-0003 |  
-| 21 | [DDD, CQRS e Event Sourcing](tutoriais/Tutorial_Aula21_DDD_CQRS_EventSourcing.md) | `aula21/inicio` = solução da Aula 20 | 2 bounded contexts + eventos + projeções + ADR-0004 |  
-| 22 | [Microsserviços e Arquiteturas Distribuídas](tutoriais/Tutorial_Aula22_Microsservicos.md) | `aula22/inicio` = solução da Aula 21 | Monolito modular + plugins + 3 serviços + ADR-0005 |  
+| 18 | Princípios SOLID, Design Patterns e ADR — `Aula_18_Tutorial_SOLID_Padroes` | `aula18/inicio` (código legado criado a partir da Aula 17) | Locadora refatorada + ADR-0001 |  
+| 19 | MVC, MVP e MVVM — `Aula_19_Tutorial_MVC_MVP_MVVM` | `aula19/inicio` = solução da Aula 18 | 3 padrões de apresentação + web + ADR-0002 |  
+| 20 | Clean, Hexagonal e Onion — `Aula_20_Tutorial_Clean_Hexagonal_Onion` | `aula20/inicio` = solução da Aula 19 | Hexágono + SQLite + teste de arquitetura + ADR-0003 |  
+| 21 | DDD, CQRS e Event Sourcing — `Aula_21_Tutorial_DDD_CQRS_EventSourcing` | `aula21/inicio` = solução da Aula 20 | 2 bounded contexts + eventos + projeções + ADR-0004 |  
+| 22 | Microsserviços e Arquiteturas Distribuídas — `Aula_22_Tutorial_Microsservicos` | `aula22/inicio` = solução da Aula 21 | Monolito modular + plugins + 3 serviços + ADR-0005 |  
 
 ## Estrutura  
 
@@ -40,7 +40,6 @@ ua5-workspace/
 ├── ferramentas/
 │   ├── preparar.py     # cria aulaXX/meu (sua cópia de trabalho)
 │   └── verificar.py    # confere o Python e roda os testes
-├── tutoriais/          # um tutorial por aula
 └── aula18/ … aula22/
     ├── inicio/         # ponto de partida da aula (não edite)
     ├── solucao/        # referência do professor (não edite; compare)
