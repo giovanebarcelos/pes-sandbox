@@ -66,18 +66,26 @@ Cada diretório `classXX/` contém:
 
 O diretório [`ua5-workspace/`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/ua5-workspace) é o ambiente de prática da UA5: cada aula tem **um tutorial passo a passo** (distribuído junto com os slides da aula, como `Aula_XX_Tutorial_*.md`/`.html`), em que a Locadora de Veículos da Aula 17 evolui de um código legado até microsserviços. Cada aula tem `inicio/` (ponto de partida), `solucao/` (referência testada) e uma orientação **🤖 Com o Agente**. Roda **localmente só com Python 3.10+** (biblioteca padrão, sem `pip`); o `docker-compose.yml` é uma alternativa opcional.
 
-| Aula | Tutorial |
-|---|---|
-| 18 | SOLID, Design Patterns e ADR (`Aula_18_Tutorial_SOLID_Padroes.md`) |
-| 19 | MVC, MVP e MVVM (`Aula_19_Tutorial_MVC_MVP_MVVM.md`) |
-| 20 | Clean, Hexagonal e Onion (`Aula_20_Tutorial_Clean_Hexagonal_Onion.md`) |
-| 21 | DDD, CQRS e Event Sourcing (`Aula_21_Tutorial_DDD_CQRS_EventSourcing.md`) |
-| 22 | Microsserviços e Arquiteturas Distribuídas (`Aula_22_Tutorial_Microsservicos.md`) |
+A **versão Java** está em [`ua5-workspace-java/`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/ua5-workspace-java): o mesmo sistema e o mesmo roteiro em **Java 17**, só com o JDK (sem Maven/Gradle; testes com um mini-JUnit incluído), com tutoriais próprios (`Aula_XX_Tutorial_*_Java.md`).
+
+| Aula | Tutorial (Python) | Tutorial (Java) |
+|---|---|---|
+| 18 | SOLID, Design Patterns e ADR (`Aula_18_Tutorial_SOLID_Padroes.md`) | `Aula_18_Tutorial_SOLID_Padroes_Java.md` |
+| 19 | MVC, MVP e MVVM (`Aula_19_Tutorial_MVC_MVP_MVVM.md`) | `Aula_19_Tutorial_MVC_MVP_MVVM_Java.md` |
+| 20 | Clean, Hexagonal e Onion (`Aula_20_Tutorial_Clean_Hexagonal_Onion.md`) | `Aula_20_Tutorial_Clean_Hexagonal_Onion_Java.md` |
+| 21 | DDD, CQRS e Event Sourcing (`Aula_21_Tutorial_DDD_CQRS_EventSourcing.md`) | `Aula_21_Tutorial_DDD_CQRS_EventSourcing_Java.md` |
+| 22 | Microsserviços e Arquiteturas Distribuídas (`Aula_22_Tutorial_Microsservicos.md`) | `Aula_22_Tutorial_Microsservicos_Java.md` |
 
 ```bash
 cd ua5-workspace
 python ferramentas/verificar.py      # testes de todas as aulas
 python ferramentas/preparar.py 18    # cria aula18/meu, a cópia de trabalho do aluno
+```
+
+```bash
+cd ua5-workspace-java
+java ferramentas/Verificar.java      # testes de todas as aulas (JDK 17+)
+java ferramentas/Preparar.java 18    # cria aula18/meu, a cópia de trabalho do aluno
 ```
 
 ## Como Executar

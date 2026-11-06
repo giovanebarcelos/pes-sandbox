@@ -1,0 +1,22 @@
+# Sua cópia de trabalho de cada aula (criada por ferramentas/Preparar.java)
+aula*/meu/
+
+# Saída de "Rodar.java compilar" e dados gerados pelas demonstrações
+out/
+dados/
+frota.csv
+*.jsonl
+*.db
+*.mv.db
+*.trace.db
+
+# Drivers JDBC opcionais (cada um baixa o seu; ver lib/LEIA-ME.md)
+lib/*.jar
+
+# IDEs e agente
+.idea/
+*.iml
+.vscode/
+.agents/
+.opencode/
+.scratch/

@@ -4,6 +4,8 @@
 
 Um único sistema, a **Locadora de Veículos da Aula 17**, evolui ao longo das cinco aulas da UA5. Cada aula tem a sua própria pasta e o seu tutorial passo a passo, que é distribuído **junto com os slides da aula** (`Aula_XX_Tutorial_*.md` e `.html`). Quando uma aula usa o resultado da anterior, o tutorial diz de onde veio.  
 
+> ☕ **Versão Java:** o mesmo sistema e o mesmo roteiro em Java 17, só com o JDK, em [`../ua5-workspace-java/`](../ua5-workspace-java/) (tutoriais `Aula_XX_Tutorial_*_Java`).  
+
 ```plantuml
 @startuml
 skinparam defaultTextAlignment center
