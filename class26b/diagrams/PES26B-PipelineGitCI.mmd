@@ -1,0 +1,9 @@
+%% Aula 26B — Do commit à produção: Git (Aulas 25-26) + CI/CD (Aula 26B)
+flowchart LR
+    B[branch feature/x<br/>commits] -->|git push| CI1[CI no push<br/>build + testes]
+    CI1 -->|abre PR| PR[Pull Request<br/>code review]
+    PR -->|checks obrigatórios<br/>branch protection| M[merge na main<br/>nova baseline]
+    M -->|git tag v1.2.0| R[workflow de release<br/>imagem versionada]
+    R -->|aprovação manual<br/>Environment production| P[produção]
+    CI1 -. falhou .-> B
+    PR -. ajustes .-> B

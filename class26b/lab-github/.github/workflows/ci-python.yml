@@ -1,0 +1,104 @@
+# =============================================================================
+# CI da Boletim API em Python - Aula 26B
+#
+#   testes      matriz Python 3.11, 3.12 e 3.13: unitarios + mocks, integracao
+#               e relatorio de cobertura (gate de 80%)
+#   testes-api  workflow reutilizavel testes-api.yml: imagem + Bruno
+# =============================================================================
+name: CI Python
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "python/**"
+      - "bruno/**"
+      - ".github/workflows/ci-python.yml"
+      - ".github/workflows/testes-api.yml"
+      - ".github/actions/**"
+  # Sem "paths:" no pull_request, de proposito: os jobs de teste sao checks
+  # OBRIGATORIOS do ruleset da main. Com filtro, um PR que nao toca este
+  # projeto nunca reportaria o check e ficaria bloqueado para sempre
+  # ("Expected - Waiting for status to be reported").
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-python-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  testes:
+    name: Testes (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
+    defaults:
+      run:
+        working-directory: python
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Instalar o Python ${{ matrix.python }}
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: python/requirements-dev.txt
+
+      - name: Instalar dependencias
+        run: pip install -r requirements-dev.txt
+
+      # 1) Unitarios + mocks: rapidos, sem rede, sem a aplicacao no ar.
+      - name: Testes unitarios e com mock
+        run: >
+          pytest -v -m "not integracao" --cov
+          --junitxml=resultados-unitarios.xml
+
+      # 2) Integracao: sobe a aplicacao inteira e testa por HTTP (--cov-append
+      #    soma a cobertura deste passo a do anterior).
+      - name: Testes de integracao
+        run: >
+          pytest -v -m integracao --cov --cov-append
+          --junitxml=resultados-integracao.xml
+
+      # 3) Relatorios de cobertura (HTML e XML) e o gate: abaixo de 80%, falha.
+      - name: Relatorio de cobertura e gate de 80%
+        run: |
+          coverage report --show-missing --fail-under=80
+          coverage html -d relatorio-cobertura
+          coverage xml -o cobertura.xml
+
+      - name: Resumo da cobertura
+        if: success()
+        run: |
+          echo "### Python ${{ matrix.python }}: cobertura de linhas $(coverage report --format=total)%" \
+              >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Guardar relatorios de teste e cobertura
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: relatorios-python-${{ matrix.python }}
+          path: |
+            python/resultados-unitarios.xml
+            python/resultados-integracao.xml
+            python/relatorio-cobertura/
+            python/cobertura.xml
+          if-no-files-found: ignore
+
+  testes-api:
+    name: Testes de API
+    needs: testes
+    uses: ./.github/workflows/testes-api.yml
+    with:
+      projeto: python
+      porta: 5000
+      ambiente-bruno: Python

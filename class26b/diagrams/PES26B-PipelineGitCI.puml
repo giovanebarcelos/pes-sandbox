@@ -1,0 +1,18 @@
+@startuml
+' Aula 26B — Do commit à produção: Git (Aulas 25-26) + CI/CD (Aula 26B)
+start
+:branch feature/x — commits;
+repeat
+  :git push;
+  :CI no push (build + testes);
+repeat while (verde?) is (não: corrige na branch)
+->sim;
+:abre Pull Request + code review;
+:checks obrigatórios (branch protection);
+:merge na main — nova baseline;
+:git tag v1.2.0;
+:workflow de release — imagem versionada;
+:aprovação manual (Environment production);
+:produção;
+stop
+@enduml

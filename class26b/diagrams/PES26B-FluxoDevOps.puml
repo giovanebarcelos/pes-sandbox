@@ -1,0 +1,22 @@
+@startuml
+' Aula 26B — Ciclo DevOps (infinito): Plan → ... → Monitor → Plan
+left to right direction
+rectangle Plan
+rectangle Code
+rectangle Build
+rectangle Test
+rectangle Package
+rectangle Release
+rectangle Deploy
+rectangle Operate
+rectangle Monitor
+Plan --> Code
+Code --> Build
+Build --> Test
+Test --> Package
+Package --> Release
+Release --> Deploy
+Deploy --> Operate
+Operate --> Monitor
+Monitor ..> Plan : feedback
+@enduml
