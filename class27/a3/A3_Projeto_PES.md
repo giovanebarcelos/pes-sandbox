@@ -218,7 +218,7 @@ Cada aula de 09 a 28 tem um slide **🤖 Com o Agente** que mostra como usá-lo 
 | Implementação | Quebrar em tickets (`to-tickets`), desenvolver com `tdd`, retrospectiva (`retro`) | Aula 17 (Slide 32) |  
 | Arquitetura | Questionar a decisão (`grill-with-docs`) e rascunhar ADR; verificar a regra de dependência; decidir a implantação | Aula 18 (Slide 39), Aula 20 (Slide 40), Aula 22 (Slide 43) |  
 | Manutenção | Diagnosticar antes de editar (`investigate-first`), refatorar com testes (`safe-refactor`), listar dívida técnica | Aula 24 (Slide 31) |  
-| Git | `.gitignore`, mensagens de commit (`caveman-commit`), revisão de PR (`caveman-review`), descrição de PR (`pr`) | Aula 25 (Slide 29), Aula 26 (Slide 30) |  
+| Git | `.gitignore`, mensagens de commit (`caveman-commit`), revisão de PR (`caveman-review`), descrição de PR (`pr`) | Aula 25 (Slide 29), Aula 26 (Slide 31) |  
 | Documentação | Docstrings, README, C4, OpenAPI, conferência do checklist da A3 | Aula 27 (🤖 Com o Agente) |  
 
 ### Regras do jogo  
