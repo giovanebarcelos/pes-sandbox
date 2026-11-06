@@ -1,0 +1,18 @@
+# Sua cópia de trabalho de cada aula (criada por ferramentas/preparar.py)
+aula*/meu/
+
+# Dados gerados pelas demonstrações
+dados/
+frota.json
+*.db
+*.jsonl
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Skills instaladas localmente pelo aluno (Aula 01B) — versione no SEU repositório, não aqui
+.agents/
+.opencode/
+.scratch/

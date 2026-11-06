@@ -1,0 +1,152 @@
+# =============================================================================
+# UA5 (Aulas 18-22) — ALTERNATIVA com Docker
+# O modo PRINCIPAL é local, só com Python 3.10+ (veja README.md).
+# Use isto se a sua máquina tem Docker mas não tem Python, ou para conferir.
+#
+# Não há build: todos os serviços usam a imagem oficial python:3.12-slim e
+# enxergam esta pasta em /workspace (o que você edita aparece no contêiner).
+#
+# Por padrão roda a pasta "solucao". Para rodar a SUA versão:
+#   Linux/macOS:  PASTA=meu docker compose run --rm aula20
+#   PowerShell:   $env:PASTA="meu"; docker compose run --rm aula20
+#
+#   docker compose run --rm verificar                      testes de todas as aulas
+#   docker compose run --rm aula18                         testes da Aula 18
+#   docker compose run --rm aula18 python -m locadora.main demonstração da Aula 18
+#   docker compose up aula19-web                           http://localhost:8019
+#   docker compose up aula20-web                           http://localhost:8020 (SQLite)
+#   docker compose run --rm aula21 python -m locadora.main
+#   docker compose --profile aula22 up                     frota, locações e notificação
+#   docker compose run --rm aula22-demo                    cliente de demonstração
+#   docker compose down -v                                 para tudo e apaga os dados
+# =============================================================================
+
+x-python: &python
+  image: python:3.12-slim
+  volumes:
+    - .:/workspace
+  environment:
+    PYTHONDONTWRITEBYTECODE: "1"
+    PYTHONUNBUFFERED: "1"
+    LOCADORA_ARQUIVO: /tmp/frota.json
+
+services:
+  verificar:
+    <<: *python
+    working_dir: /workspace
+    command: python ferramentas/verificar.py
+    profiles: ["ferramentas"]
+
+  aula18:
+    <<: *python
+    working_dir: /workspace/aula18/${PASTA:-solucao}
+    command: python -m unittest -v
+    profiles: ["aula18"]
+
+  aula19:
+    <<: *python
+    working_dir: /workspace/aula19/${PASTA:-solucao}
+    command: python -m unittest -v
+    profiles: ["aula19"]
+
+  aula19-web:
+    <<: *python
+    working_dir: /workspace/aula19/${PASTA:-solucao}
+    command: python -m locadora.apresentacao.web_mvc
+    environment:
+      PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+      PORT: "8019"
+    ports: ["8019:8019"]
+    profiles: ["aula19"]
+
+  aula20:
+    <<: *python
+    working_dir: /workspace/aula20/${PASTA:-solucao}
+    command: python -m unittest -v
+    profiles: ["aula20"]
+
+  aula20-web:
+    <<: *python
+    working_dir: /workspace/aula20/${PASTA:-solucao}
+    command: python -m locadora.adaptadores.entrada.web
+    environment:
+      PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+      PORT: "8020"
+      LOCADORA_REPO: sqlite
+      LOCADORA_DB: /dados/locadora.db
+    volumes:
+      - .:/workspace
+      - dados20:/dados
+    ports: ["8020:8020"]
+    profiles: ["aula20"]
+
+  aula21:
+    <<: *python
+    working_dir: /workspace/aula21/${PASTA:-solucao}
+    command: python -m unittest -v
+    profiles: ["aula21"]
+
+  aula22:
+    <<: *python
+    working_dir: /workspace/aula22/${PASTA:-solucao}
+    command: python -m unittest -v
+    profiles: ["aula22-testes"]
+
+  # ---- Aula 22: três microsserviços, cada um no seu contêiner ----
+  frota:
+    <<: *python
+    working_dir: /workspace/aula22/${PASTA:-solucao}
+    command: python -m servicos.frota_servico
+    environment:
+      PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+      PORTA: "8001"
+    ports: ["8001:8001"]
+    profiles: ["aula22"]
+
+  notificacao:
+    <<: *python
+    working_dir: /workspace/aula22/${PASTA:-solucao}
+    command: python -m servicos.notificacao_servico
+    environment:
+      PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+      PORTA: "8003"
+    ports: ["8003:8003"]
+    profiles: ["aula22"]
+
+  locacoes:
+    <<: *python
+    working_dir: /workspace/aula22/${PASTA:-solucao}
+    command: python -m servicos.locacoes_servico
+    environment:
+      PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+      PORTA: "8002"
+      FROTA_URL: http://frota:8001
+      NOTIFICACAO_URL: http://notificacao:8003
+      LOCADORA_EVENTOS: /dados/eventos.jsonl
+    volumes:
+      - .:/workspace
+      - dados22:/dados
+    ports: ["8002:8002"]
+    depends_on: [frota, notificacao]
+    profiles: ["aula22"]
+
+  aula22-demo:
+    <<: *python
+    working_dir: /workspace/aula22/${PASTA:-solucao}
+    command: python -m servicos.demo_cliente
+    environment:
+      PYTHONUNBUFFERED: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+      FROTA_URL: http://frota:8001
+      LOCACOES_URL: http://locacoes:8002
+      NOTIFICACAO_URL: http://notificacao:8003
+    profiles: ["aula22-demo"]
+
+volumes:
+  dados20:
+  dados22:

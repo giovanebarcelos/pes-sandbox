@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+  "permission": {
+    "bash": {
+      "*": "ask",
+      "python -m unittest*": "allow",
+      "python3 -m unittest*": "allow",
+      "python ferramentas/verificar.py*": "allow",
+      "python3 ferramentas/verificar.py*": "allow",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git push*": "deny"
+    }
+  }
+}

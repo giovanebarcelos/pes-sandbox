@@ -61,6 +61,24 @@ Cada diretório `classXX/` contém:
 | 27 | UA8 | Documentação Técnica | [PES27-C4-Contexto.mmd](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/refs/heads/main/class27/diagrams/PES27-C4-Contexto.mmd) ([PES27-C4-Contexto.puml](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/refs/heads/main/class27/diagrams/PES27-C4-Contexto.puml)), [PES27-TemplateREADME.md](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/refs/heads/main/class27/diagrams/PES27-TemplateREADME.md) | [PES2701-Documentacao.py](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/refs/heads/main/class27/python/PES2701-Documentacao.py) | [PES2701-Documentacao.java](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/refs/heads/main/class27/java/PES2701-Documentacao.java) |
 | 28 | UA8 | Práticas Colaborativas e Ética | [PES28-MapaMentalCurso.mmd](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/refs/heads/main/class28/diagrams/PES28-MapaMentalCurso.mmd) ([PES28-MapaMentalCurso.puml](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/refs/heads/main/class28/diagrams/PES28-MapaMentalCurso.puml)) | [PES2801-CodeReviewChecklist.py](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/refs/heads/main/class28/python/PES2801-CodeReviewChecklist.py) | [PES2801-CodeReviewChecklist.java](https://raw.githubusercontent.com/giovanebarcelos/pes-sandbox/refs/heads/main/class28/java/PES2801-CodeReviewChecklist.java) |
 
+## Workspace da UA5 — Tutoriais das Aulas 18-22
+
+O diretório [`ua5-workspace/`](https://github.com/giovanebarcelos/pes-sandbox/tree/main/ua5-workspace) reúne **um tutorial passo a passo por aula** da UA5, em que a Locadora de Veículos da Aula 17 evolui de um código legado até microsserviços. Cada aula tem `inicio/` (ponto de partida), `solucao/` (referência testada) e uma orientação **🤖 Com o Agente**. Roda **localmente só com Python 3.10+** (biblioteca padrão, sem `pip`); o `docker-compose.yml` é uma alternativa opcional.
+
+| Aula | Tutorial |
+|---|---|
+| 18 | [SOLID, Design Patterns e ADR](https://github.com/giovanebarcelos/pes-sandbox/blob/main/ua5-workspace/tutoriais/Tutorial_Aula18_SOLID_Padroes.md) |
+| 19 | [MVC, MVP e MVVM](https://github.com/giovanebarcelos/pes-sandbox/blob/main/ua5-workspace/tutoriais/Tutorial_Aula19_MVC_MVP_MVVM.md) |
+| 20 | [Clean, Hexagonal e Onion](https://github.com/giovanebarcelos/pes-sandbox/blob/main/ua5-workspace/tutoriais/Tutorial_Aula20_Clean_Hexagonal_Onion.md) |
+| 21 | [DDD, CQRS e Event Sourcing](https://github.com/giovanebarcelos/pes-sandbox/blob/main/ua5-workspace/tutoriais/Tutorial_Aula21_DDD_CQRS_EventSourcing.md) |
+| 22 | [Microsserviços e Arquiteturas Distribuídas](https://github.com/giovanebarcelos/pes-sandbox/blob/main/ua5-workspace/tutoriais/Tutorial_Aula22_Microsservicos.md) |
+
+```bash
+cd ua5-workspace
+python ferramentas/verificar.py      # testes de todas as aulas
+python ferramentas/preparar.py 18    # cria aula18/meu, a cópia de trabalho do aluno
+```
+
 ## Como Executar
 
 ### Python
