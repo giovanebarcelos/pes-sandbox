@@ -1,0 +1,18 @@
+%% PES25B - Camadas de teste no pipeline (fail fast: rápidos primeiro, lentos depois)
+%% Aula 25B (complementar): Integração Contínua e Entrega Contínua
+%% Projeto e Engenharia de Software - Prof. Giovane Barcelos
+flowchart TD
+    A[Commit] --> B[Testes unitários<br/>~1-2 min]
+    B -->|falhou| X[Feedback em minutos<br/>pipeline para]
+    B --> C[Testes de integração<br/>~5 min]
+    C -->|falhou| X
+    C --> D[Análise estática + Quality Gate<br/>~3 min]
+    D -->|reprovado| X
+    D --> E[Imagem Docker]
+    E --> F[Deploy em staging]
+    F --> G[Testes de API / E2E<br/>~15 min]
+    G -->|falhou| X
+    G --> H[Performance<br/>só em releases]
+    H --> I[Deploy em produção]
+    style X fill:#EF4444,color:#FFF
+    style I fill:#059669,color:#FFF

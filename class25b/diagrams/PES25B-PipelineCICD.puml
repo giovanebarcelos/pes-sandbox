@@ -1,0 +1,27 @@
+@startuml PES25B-PipelineCICD
+' PES25B - Pipeline de CI/CD: da integração ao deploy (CI, CD Delivery e CD Deploy)
+' Aula 25B (complementar): Integração Contínua e Entrega Contínua
+' Projeto e Engenharia de Software - Prof. Giovane Barcelos
+' Versão PlantUML (https://plantuml.com/) do diagrama PES25B-PipelineCICD.mmd (Mermaid).
+
+skinparam shadowing false
+skinparam ArrowColor #334155
+
+start
+:Commit / push;
+:Build;
+:Testes automatizados;
+:Análise estática;
+if (Quality Gate?) then (OK)
+  :Artefato versionado;
+  :Deploy em staging;
+  if (Aprovação manual?) then (CD Delivery)
+    #2563EB:<color:#FFF>Produção após clique humano</color>;
+  else (CD Deploy)
+    #059669:<color:#FFF>Produção automática</color>;
+  endif
+else (reprovado)
+  #EF4444:<color:#FFF>Pipeline vermelho (fail fast)</color>;
+endif
+stop
+@enduml
